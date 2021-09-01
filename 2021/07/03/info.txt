@@ -1,0 +1,48 @@
+Трансляции
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/20 Волжские просторы Кросс-лонг Элита M
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/21 Волжские просторы Кросс-лонг Элита Ж
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/22 Волжские просторы Кросс-лонг M18
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/23 Волжские просторы Кросс-лонг Ж18
+
+Участники
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/20/competitors Волжские просторы Кросс-лонг Элита M
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/21/competitors Волжские просторы Кросс-лонг Элита Ж
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/22/competitors Волжские просторы Кросс-лонг M18
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/23/competitors Волжские просторы Кросс-лонг Ж18
+
+
+Карты
+https://o-gps-center.ru/manage/maps/view/7921 Элита М 
+https://o-gps-center.ru/manage/maps/view/7922 Элита Ж, М18
+https://o-gps-center.ru/manage/maps/view/7923 Ж18 
+
+Трансляции
+https://o-gps-center.ru/manage2/events/view/10356  Волжские просторы Кросс-лонг Элита M
+https://o-gps-center.ru/manage2/events/view/10357  Волжские просторы Кросс-лонг Элита Ж
+https://o-gps-center.ru/manage2/events/view/10358  Волжские просторы Кросс-лонг M18
+https://o-gps-center.ru/manage2/events/view/10359  Волжские просторы Кросс-лонг Ж18
+
+Вьюверы
+https://viewer.o-gps-center.ru/viewer/event/10356  Волжские просторы Кросс-лонг Элита M
+https://viewer.o-gps-center.ru/viewer/event/10357  Волжские просторы Кросс-лонг Элита Ж
+https://viewer.o-gps-center.ru/viewer/event/10358  Волжские просторы Кросс-лонг M18
+https://viewer.o-gps-center.ru/viewer/event/10359  Волжские просторы Кросс-лонг Ж18
+
+центр карты
+56,375946
+43,743141
+15
+
+размер карты
+2409 3437
+
+ 2	(0,09580078125, 1,3959616850222) ↔ ( 231 , 3363) ↔ (43,734958 , 56,388657)
+ 6	(0,7720703125 , 0,968315999247 ) ↔ (1860 , 2333) ↔ (43,754005 , 56,378369)
+ 8	(0,8112890625 , 0,2145387576527) ↔ (1954 ,  517) ↔ (43,750159 , 56,364789)
+ 9	(0,1780666482 , 0,1197021493995) ↔ ( 429 ,  288) ↔ (43,728993 , 56.365426)
+
+
+Оргео
+https://orgeo.ru/event/17263
+https://orgeo.ru/live/#/17263/3
+

@@ -1,0 +1,37 @@
+Трансляции
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/16 Волжские просторы Кросс-классика Элита M
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/17 Волжские просторы Кросс-классика Элита Ж
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/18 Волжские просторы Кросс-классика M18
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/19 Волжские просторы Кросс-классика Ж18
+
+Участники
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/16/competitors Волжские просторы Кросс-классика Элита M
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/17/competitors Волжские просторы Кросс-классика Элита Ж
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/18/competitors Волжские просторы Кросс-классика M18
+https://artezio-sport-gps-admin.azurewebsites.net/gps-broadcast/19/competitors Волжские просторы Кросс-классика Ж18
+
+
+Карты
+https://o-gps-center.ru/manage/maps/view/7911 Элита М 
+https://o-gps-center.ru/manage/maps/view/7912 Элита Ж, М18
+https://o-gps-center.ru/manage/maps/view/7913 Ж18 
+
+центр карты
+56,248007
+44,019555
+15
+
+размер карты
+2578 1807
+
+ 2	(0,0331640625, 0,35337880018424) ↔ (   85 ,  910) ↔ (44,001966 , 56,249785)
+ 4	(0,4673828125, 0,55775052729828) ↔ ( 1205 , 1438) ↔ (44,018312 , 56,251972)
+ 5	(0,7973828125, 0,42523416286848) ↔ ( 2056 , 1096) ↔ (44,028952 , 56,247979)
+ 6	(0,7830078125, 0,17427702555272) ↔ ( 2019 ,  449) ↔ (44,026495 , 56,243258)
+
+
+
+Оргео
+https://orgeo.ru/event/17263
+https://orgeo.ru/live/#/17263/2
+
