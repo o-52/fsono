@@ -1,0 +1,180 @@
+{
+  "Event": {
+    "Name": "Чемпионат и Первенство Нижегородской области по спортивному ориентированию\r\nДисциплина «кросс – марафон» (Чемпионат)\r\nКод дисциплины 0830041811Л",
+    "Date": "2021-08-28T00:00:00+03:00",
+    "Location": "Нижний Новгород",
+    "TimeZone": 3
+  },
+  "Competitors": [
+    {
+      "LastName": "Смирнов",
+      "FirstName": "Александр",
+      "BirthYear": "2005",
+      "StartNumber": "318",
+      "Class": "М16",
+      "Team": "магнитная стрелка",
+      "Rank": "I",
+      "StartTime": "11:09:00",
+      "SiCard": "",
+      "Splits": null
+    },
+    {
+      "LastName": "Шкапов",
+      "FirstName": "Николай",
+      "BirthYear": "2005",
+      "StartNumber": "32",
+      "Class": "М16",
+      "Team": "Стародумов",
+      "Rank": "Iю",
+      "StartTime": "11:10:00",
+      "SiCard": "1403815",
+      "Splits": null
+    },
+    {
+      "LastName": "Гранев",
+      "FirstName": "Николай",
+      "BirthYear": "2006",
+      "StartNumber": "31",
+      "Class": "М16",
+      "Team": "ЦДЮТЭ г.Бор",
+      "Rank": "IIIю",
+      "StartTime": "11:11:00",
+      "SiCard": "4019000",
+      "Splits": null
+    },
+    {
+      "LastName": "Кукушкин",
+      "FirstName": "Всеволод",
+      "BirthYear": "2006",
+      "StartNumber": "37",
+      "Class": "М16",
+      "Team": "Нижегородский район",
+      "Rank": "III",
+      "StartTime": "11:12:00",
+      "SiCard": "1097577",
+      "Splits": null
+    },
+    {
+      "LastName": "Минин",
+      "FirstName": "Федор",
+      "BirthYear": "2006",
+      "StartNumber": "35",
+      "Class": "М16",
+      "Team": "Нижегородский район",
+      "Rank": "I",
+      "StartTime": "11:13:00",
+      "SiCard": "8122928",
+      "Splits": null
+    },
+    {
+      "LastName": "Мироненко",
+      "FirstName": "Никита",
+      "BirthYear": "2006",
+      "StartNumber": "36",
+      "Class": "М16",
+      "Team": "магнитная стрелка",
+      "Rank": "II",
+      "StartTime": "11:14:00",
+      "SiCard": "8122851",
+      "Splits": null
+    },
+    {
+      "LastName": "Кураев",
+      "FirstName": "Даниил",
+      "BirthYear": "2005",
+      "StartNumber": "30",
+      "Class": "М16",
+      "Team": "МБУ СШОР №12(Миронов",
+      "Rank": "I",
+      "StartTime": "11:15:00",
+      "SiCard": "1412509",
+      "Splits": null
+    },
+    {
+      "LastName": "Шененков",
+      "FirstName": "Даниил",
+      "BirthYear": "2005",
+      "StartNumber": "38",
+      "Class": "М16",
+      "Team": "магнитная стрелка",
+      "Rank": "I",
+      "StartTime": "11:16:00",
+      "SiCard": "8020563",
+      "Splits": null
+    },
+    {
+      "LastName": "Крупчатников",
+      "FirstName": "Михаил",
+      "BirthYear": "2006",
+      "StartNumber": "34",
+      "Class": "М16",
+      "Team": "магнитная стрелка",
+      "Rank": "I",
+      "StartTime": "11:17:00",
+      "SiCard": "8122867",
+      "Splits": null
+    },
+    {
+      "LastName": "Втюрин",
+      "FirstName": "Кирилл",
+      "BirthYear": "2005",
+      "StartNumber": "33",
+      "Class": "М16",
+      "Team": "Нижегородский район",
+      "Rank": "I",
+      "StartTime": "11:18:00",
+      "SiCard": "8122815",
+      "Splits": null
+    },
+    {
+      "LastName": "Попов",
+      "FirstName": "Александр",
+      "BirthYear": "2006",
+      "StartNumber": "41",
+      "Class": "М16",
+      "Team": "ОГБУ СШОР №3, Иванов",
+      "Rank": "I",
+      "StartTime": "11:19:00",
+      "SiCard": "8664473",
+      "Splits": null
+    },
+    {
+      "LastName": "Сазонов",
+      "FirstName": "Константин",
+      "BirthYear": "2005",
+      "StartNumber": "39",
+      "Class": "М16",
+      "Team": "СДЮСШОР№12 МАРТ",
+      "Rank": "I",
+      "StartTime": "11:20:00",
+      "SiCard": "8470100",
+      "Splits": null
+    },
+    {
+      "LastName": "Шевчук",
+      "FirstName": "Дмитрий",
+      "BirthYear": "2005",
+      "StartNumber": "42",
+      "Class": "М16",
+      "Team": "СШОР № 12 Завылова",
+      "Rank": "КМС",
+      "StartTime": "11:21:00",
+      "SiCard": "8003241",
+      "Splits": null
+    },
+    {
+      "LastName": "Еремин",
+      "FirstName": "Сергей",
+      "BirthYear": "2006",
+      "StartNumber": "40",
+      "Class": "М16",
+      "Team": "СШОР 12 Еремина",
+      "Rank": "I",
+      "StartTime": "11:22:00",
+      "SiCard": "7211024",
+      "Splits": null
+    }
+  ],
+  "IsSuccess": true,
+  "ErrorMessage": null
+}

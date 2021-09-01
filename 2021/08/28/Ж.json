@@ -1,0 +1,50 @@
+[
+    {
+      "LastName": "Мизонова",
+      "FirstName": "Надежда",
+      "BirthYear": "1996",
+      "StartNumber": "277",
+      "Class": "ЖЕНЩИНЫ",
+      "Team": "СДЮСШОР №12 Миронова",
+      "Rank": "КМС",
+      "StartTime": "11:01:00",
+      "SiCard": "1633038",
+      "Splits": null
+    },
+    {
+      "LastName": "Плис",
+      "FirstName": "Ирина",
+      "BirthYear": "1992",
+      "StartNumber": "14",
+      "Class": "ЖЕНЩИНЫ",
+      "Team": "Way of Santiago",
+      "Rank": null,
+      "StartTime": "11:02:00",
+      "SiCard": "8681438",
+      "Splits": null
+    },
+    {
+      "LastName": "Сазонова",
+      "FirstName": "Надежда",
+      "BirthYear": "1979",
+      "StartNumber": "12",
+      "Class": "ЖЕНЩИНЫ",
+      "Team": "Бор",
+      "Rank": "КМС",
+      "StartTime": "11:03:00",
+      "SiCard": "8370100",
+      "Splits": null
+    },
+    {
+      "LastName": "Зотова",
+      "FirstName": "Елена",
+      "BirthYear": "1979",
+      "StartNumber": "13",
+      "Class": "ЖЕНЩИНЫ",
+      "Team": "Зотова. Приокский",
+      "Rank": "КМС",
+      "StartTime": "11:04:00",
+      "SiCard": "8681417",
+      "Splits": null
+    }
+  ]

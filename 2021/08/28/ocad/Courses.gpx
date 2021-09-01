@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+creator="OCAD Version 10.3.0" version="1.1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
+http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <link href="http://www.ocad.com">
+      <text>OCAD AG</text>
+    </link>
+    <time>2021-08-27T21:53:40</time>
+    <bounds maxlat="56.25835190" maxlon="44.04038355" minlat="56.25665870" minlon="44.00777899"/>
+  </metadata>
+
+  <wpt lat="56.25631779" lon="44.01341768" >
+    <name> Ñ1 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25544780" lon="44.02863781" >
+    <name> 31 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25556287" lon="44.03527591" >
+    <name> 32 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25426948" lon="44.03790436" >
+    <name> 33 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24229174" lon="44.02935810" >
+    <name> 34 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24177104" lon="44.03394459" >
+    <name> 35 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24443350" lon="44.03465789" >
+    <name> 36 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25697252" lon="44.01551101" >
+    <name> 37 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25980418" lon="44.01849510" >
+    <name> 38 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25990463" lon="44.02478619" >
+    <name> 39 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25749600" lon="44.02760322" >
+    <name> 40 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24658215" lon="44.01745176" >
+    <name> 41 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24565029" lon="44.01816177" >
+    <name> 42 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24487546" lon="44.02034069" >
+    <name> 43 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24469671" lon="44.03038549" >
+    <name> 44 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24931584" lon="44.03055053" >
+    <name> 45 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25064632" lon="44.02641274" >
+    <name> 46 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.24903151" lon="44.01199949" >
+    <name> 47 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25223428" lon="44.00606428" >
+    <name> 48 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25831596" lon="44.01407527" >
+    <name> 49 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25883833" lon="44.03634159" >
+    <name> 50 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25539230" lon="44.03900759" >
+    <name> 51 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25443738" lon="44.03335441" >
+    <name> 52 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25274263" lon="44.03076294" >
+    <name> 53 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25215887" lon="44.02374051" >
+    <name> 54 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25355769" lon="44.01477954" >
+    <name> 55 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25652884" lon="44.01931011" >
+    <name> 56 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25388595" lon="44.01952000" >
+    <name> 57 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25399582" lon="44.01631159" >
+    <name> 58 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25221189" lon="44.01422304" >
+    <name> 59 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25573096" lon="44.01313069" >
+    <name> 90 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <wpt lat="56.25616468" lon="44.01189207" >
+    <name> Ô1 </name>
+    <cmt>  </cmt>
+  </wpt>
+  <trk>
+    <name> Ì21 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25544780" lon="44.02863781" >
+        <name> 31 </name>
+      </trkpt>
+      <trkpt lat="56.25556287" lon="44.03527591" >
+        <name> 32 </name>
+      </trkpt>
+      <trkpt lat="56.25426948" lon="44.03790436" >
+        <name> 33 </name>
+      </trkpt>
+      <trkpt lat="56.24229174" lon="44.02935810" >
+        <name> 34 </name>
+      </trkpt>
+      <trkpt lat="56.24177104" lon="44.03394459" >
+        <name> 35 </name>
+      </trkpt>
+      <trkpt lat="56.24443350" lon="44.03465789" >
+        <name> 36 </name>
+      </trkpt>
+      <trkpt lat="56.25697252" lon="44.01551101" >
+        <name> 37 </name>
+      </trkpt>
+      <trkpt lat="56.25980418" lon="44.01849510" >
+        <name> 38 </name>
+      </trkpt>
+      <trkpt lat="56.25990463" lon="44.02478619" >
+        <name> 39 </name>
+      </trkpt>
+      <trkpt lat="56.25749600" lon="44.02760322" >
+        <name> 40 </name>
+      </trkpt>
+      <trkpt lat="56.24658215" lon="44.01745176" >
+        <name> 41 </name>
+      </trkpt>
+      <trkpt lat="56.24565029" lon="44.01816177" >
+        <name> 42 </name>
+      </trkpt>
+      <trkpt lat="56.24487546" lon="44.02034069" >
+        <name> 43 </name>
+      </trkpt>
+      <trkpt lat="56.24469671" lon="44.03038549" >
+        <name> 44 </name>
+      </trkpt>
+      <trkpt lat="56.24931584" lon="44.03055053" >
+        <name> 45 </name>
+      </trkpt>
+      <trkpt lat="56.24903151" lon="44.01199949" >
+        <name> 47 </name>
+      </trkpt>
+      <trkpt lat="56.25223428" lon="44.00606428" >
+        <name> 48 </name>
+      </trkpt>
+      <trkpt lat="56.25831596" lon="44.01407527" >
+        <name> 49 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25399582" lon="44.01631159" >
+        <name> 58 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Æ21, Ì18 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25980418" lon="44.01849510" >
+        <name> 38 </name>
+      </trkpt>
+      <trkpt lat="56.25749600" lon="44.02760322" >
+        <name> 40 </name>
+      </trkpt>
+      <trkpt lat="56.25544780" lon="44.02863781" >
+        <name> 31 </name>
+      </trkpt>
+      <trkpt lat="56.24658215" lon="44.01745176" >
+        <name> 41 </name>
+      </trkpt>
+      <trkpt lat="56.24565029" lon="44.01816177" >
+        <name> 42 </name>
+      </trkpt>
+      <trkpt lat="56.24177104" lon="44.03394459" >
+        <name> 35 </name>
+      </trkpt>
+      <trkpt lat="56.24443350" lon="44.03465789" >
+        <name> 36 </name>
+      </trkpt>
+      <trkpt lat="56.24931584" lon="44.03055053" >
+        <name> 45 </name>
+      </trkpt>
+      <trkpt lat="56.25556287" lon="44.03527591" >
+        <name> 32 </name>
+      </trkpt>
+      <trkpt lat="56.25539230" lon="44.03900759" >
+        <name> 51 </name>
+      </trkpt>
+      <trkpt lat="56.25426948" lon="44.03790436" >
+        <name> 33 </name>
+      </trkpt>
+      <trkpt lat="56.24903151" lon="44.01199949" >
+        <name> 47 </name>
+      </trkpt>
+      <trkpt lat="56.25223428" lon="44.00606428" >
+        <name> 48 </name>
+      </trkpt>
+      <trkpt lat="56.25831596" lon="44.01407527" >
+        <name> 49 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25399582" lon="44.01631159" >
+        <name> 58 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Æ18,Ì16 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25544780" lon="44.02863781" >
+        <name> 31 </name>
+      </trkpt>
+      <trkpt lat="56.24469671" lon="44.03038549" >
+        <name> 44 </name>
+      </trkpt>
+      <trkpt lat="56.24229174" lon="44.02935810" >
+        <name> 34 </name>
+      </trkpt>
+      <trkpt lat="56.24177104" lon="44.03394459" >
+        <name> 35 </name>
+      </trkpt>
+      <trkpt lat="56.24443350" lon="44.03465789" >
+        <name> 36 </name>
+      </trkpt>
+      <trkpt lat="56.24903151" lon="44.01199949" >
+        <name> 47 </name>
+      </trkpt>
+      <trkpt lat="56.25221189" lon="44.01422304" >
+        <name> 59 </name>
+      </trkpt>
+      <trkpt lat="56.25388595" lon="44.01952000" >
+        <name> 57 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25697252" lon="44.01551101" >
+        <name> 37 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Æ16 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25831596" lon="44.01407527" >
+        <name> 49 </name>
+      </trkpt>
+      <trkpt lat="56.25980418" lon="44.01849510" >
+        <name> 38 </name>
+      </trkpt>
+      <trkpt lat="56.25544780" lon="44.02863781" >
+        <name> 31 </name>
+      </trkpt>
+      <trkpt lat="56.24931584" lon="44.03055053" >
+        <name> 45 </name>
+      </trkpt>
+      <trkpt lat="56.24487546" lon="44.02034069" >
+        <name> 43 </name>
+      </trkpt>
+      <trkpt lat="56.24658215" lon="44.01745176" >
+        <name> 41 </name>
+      </trkpt>
+      <trkpt lat="56.24903151" lon="44.01199949" >
+        <name> 47 </name>
+      </trkpt>
+      <trkpt lat="56.25221189" lon="44.01422304" >
+        <name> 59 </name>
+      </trkpt>
+      <trkpt lat="56.25399582" lon="44.01631159" >
+        <name> 58 </name>
+      </trkpt>
+      <trkpt lat="56.25388595" lon="44.01952000" >
+        <name> 57 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25697252" lon="44.01551101" >
+        <name> 37 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ì14 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25749600" lon="44.02760322" >
+        <name> 40 </name>
+      </trkpt>
+      <trkpt lat="56.25544780" lon="44.02863781" >
+        <name> 31 </name>
+      </trkpt>
+      <trkpt lat="56.25443738" lon="44.03335441" >
+        <name> 52 </name>
+      </trkpt>
+      <trkpt lat="56.25556287" lon="44.03527591" >
+        <name> 32 </name>
+      </trkpt>
+      <trkpt lat="56.25883833" lon="44.03634159" >
+        <name> 50 </name>
+      </trkpt>
+      <trkpt lat="56.25990463" lon="44.02478619" >
+        <name> 39 </name>
+      </trkpt>
+      <trkpt lat="56.25831596" lon="44.01407527" >
+        <name> 49 </name>
+      </trkpt>
+      <trkpt lat="56.25697252" lon="44.01551101" >
+        <name> 37 </name>
+      </trkpt>
+      <trkpt lat="56.25388595" lon="44.01952000" >
+        <name> 57 </name>
+      </trkpt>
+      <trkpt lat="56.25355769" lon="44.01477954" >
+        <name> 55 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Æ14 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25980418" lon="44.01849510" >
+        <name> 38 </name>
+      </trkpt>
+      <trkpt lat="56.25990463" lon="44.02478619" >
+        <name> 39 </name>
+      </trkpt>
+      <trkpt lat="56.25749600" lon="44.02760322" >
+        <name> 40 </name>
+      </trkpt>
+      <trkpt lat="56.25443738" lon="44.03335441" >
+        <name> 52 </name>
+      </trkpt>
+      <trkpt lat="56.25274263" lon="44.03076294" >
+        <name> 53 </name>
+      </trkpt>
+      <trkpt lat="56.25064632" lon="44.02641274" >
+        <name> 46 </name>
+      </trkpt>
+      <trkpt lat="56.25215887" lon="44.02374051" >
+        <name> 54 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ì12 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25697252" lon="44.01551101" >
+        <name> 37 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25388595" lon="44.01952000" >
+        <name> 57 </name>
+      </trkpt>
+      <trkpt lat="56.25221189" lon="44.01422304" >
+        <name> 59 </name>
+      </trkpt>
+      <trkpt lat="56.25355769" lon="44.01477954" >
+        <name> 55 </name>
+      </trkpt>
+      <trkpt lat="56.25399582" lon="44.01631159" >
+        <name> 58 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Æ12 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25388595" lon="44.01952000" >
+        <name> 57 </name>
+      </trkpt>
+      <trkpt lat="56.25221189" lon="44.01422304" >
+        <name> 59 </name>
+      </trkpt>
+      <trkpt lat="56.25355769" lon="44.01477954" >
+        <name> 55 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ì10, Æ10 </name>
+    <trkseg>
+      <trkpt lat="56.25631779" lon="44.01341768" >
+        <name> Ñ1 </name>
+      </trkpt>
+      <trkpt lat="56.25697252" lon="44.01551101" >
+        <name> 37 </name>
+      </trkpt>
+      <trkpt lat="56.25652884" lon="44.01931011" >
+        <name> 56 </name>
+      </trkpt>
+      <trkpt lat="56.25388595" lon="44.01952000" >
+        <name> 57 </name>
+      </trkpt>
+      <trkpt lat="56.25399582" lon="44.01631159" >
+        <name> 58 </name>
+      </trkpt>
+      <trkpt lat="56.25573096" lon="44.01313069" >
+        <name> 90 </name>
+      </trkpt>
+      <trkpt lat="56.25616468" lon="44.01189207" >
+        <name> Ô1 </name>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,60 @@
+{
+  "Event": {
+    "Name": "Чемпионат и Первенство Нижегородской области по спортивному ориентированию\r\nДисциплина «кросс – марафон» (Чемпионат)\r\nКод дисциплины 0830041811Л",
+    "Date": "2021-08-28T00:00:00+03:00",
+    "Location": "Нижний Новгород",
+    "TimeZone": 3
+  },
+  "Competitors": [
+    {
+      "LastName": "Егоров",
+      "FirstName": "Павел",
+      "BirthYear": "2003",
+      "StartNumber": "293",
+      "Class": "М18",
+      "Team": "магнитная стрелка",
+      "Rank": "КМС",
+      "StartTime": "11:05:00",
+      "SiCard": "8122867",
+      "Splits": null
+    },
+    {
+      "LastName": "Петров",
+      "FirstName": "Дмитрий",
+      "BirthYear": "2004",
+      "StartNumber": "294",
+      "Class": "М18",
+      "Team": "СДЮСШОР№12 МАРТ",
+      "Rank": "I",
+      "StartTime": "11:06:00",
+      "SiCard": "1410315",
+      "Splits": null
+    },
+    {
+      "LastName": "Елисеев",
+      "FirstName": "Сергей",
+      "BirthYear": "2004",
+      "StartNumber": "16",
+      "Class": "М18",
+      "Team": "Нижегородский район",
+      "Rank": "КМС",
+      "StartTime": "11:07:00",
+      "SiCard": "8666431",
+      "Splits": null
+    },
+    {
+      "LastName": "Пестряков",
+      "FirstName": "Тимофей",
+      "BirthYear": "2003",
+      "StartNumber": "17",
+      "Class": "М18",
+      "Team": "МБУ СШОР №12(Миронов",
+      "Rank": "I",
+      "StartTime": "11:08:00",
+      "SiCard": "8269153",
+      "Splits": null
+    }
+  ],
+  "IsSuccess": true,
+  "ErrorMessage": null
+}

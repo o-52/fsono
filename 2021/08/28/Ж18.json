@@ -1,0 +1,108 @@
+{
+  "Event": {
+    "Name": "Чемпионат и Первенство Нижегородской области по спортивному ориентированию\r\nДисциплина «кросс – марафон» (Чемпионат)\r\nКод дисциплины 0830041811Л",
+    "Date": "2021-08-28T00:00:00+03:00",
+    "Location": "Нижний Новгород",
+    "TimeZone": 3
+  },
+  "Competitors": [
+    {
+      "LastName": "Дырда",
+      "FirstName": "София",
+      "BirthYear": "2003",
+      "StartNumber": "268",
+      "Class": "Ж18",
+      "Team": "магнитная стрелка",
+      "Rank": "КМС",
+      "StartTime": "11:01:00",
+      "SiCard": "8061261",
+      "Splits": null
+    },
+    {
+      "LastName": "Штернова",
+      "FirstName": "Марина",
+      "BirthYear": "2003",
+      "StartNumber": "25",
+      "Class": "Ж18",
+      "Team": "магнитная стрелка",
+      "Rank": "КМС",
+      "StartTime": "11:02:00",
+      "SiCard": "8122860",
+      "Splits": null
+    },
+    {
+      "LastName": "Морозова",
+      "FirstName": "Полина",
+      "BirthYear": "2004",
+      "StartNumber": "28",
+      "Class": "Ж18",
+      "Team": "33 район, Ковров",
+      "Rank": "КМС",
+      "StartTime": "11:03:00",
+      "SiCard": "8719100",
+      "Splits": null
+    },
+    {
+      "LastName": "Иванова",
+      "FirstName": "Виктория",
+      "BirthYear": "2004",
+      "StartNumber": "23",
+      "Class": "Ж18",
+      "Team": "МБОУ ДОД ДЮСШ 'Нижег",
+      "Rank": "I",
+      "StartTime": "11:04:00",
+      "SiCard": "1450055",
+      "Splits": null
+    },
+    {
+      "LastName": "Тихончук",
+      "FirstName": "Анна",
+      "BirthYear": "2004",
+      "StartNumber": "29",
+      "Class": "Ж18",
+      "Team": "магнитная стрелка",
+      "Rank": "КМС",
+      "StartTime": "11:05:00",
+      "SiCard": "8122889",
+      "Splits": null
+    },
+    {
+      "LastName": "Самошина",
+      "FirstName": "Лиза",
+      "BirthYear": "2004",
+      "StartNumber": "26",
+      "Class": "Ж18",
+      "Team": "Самошины 52",
+      "Rank": "КМС",
+      "StartTime": "11:06:00",
+      "SiCard": "8667338",
+      "Splits": null
+    },
+    {
+      "LastName": "Антипова",
+      "FirstName": "Елена",
+      "BirthYear": "2003",
+      "StartNumber": "24",
+      "Class": "Ж18",
+      "Team": "СДЮСШОР№12 МАРТ",
+      "Rank": "КМС",
+      "StartTime": "11:07:00",
+      "SiCard": "8122862",
+      "Splits": null
+    },
+    {
+      "LastName": "Бесхмельнова",
+      "FirstName": "Ксения",
+      "BirthYear": "2004",
+      "StartNumber": "27",
+      "Class": "Ж18",
+      "Team": "магнитная стрелка",
+      "Rank": "КМС",
+      "StartTime": "11:08:00",
+      "SiCard": "8122856",
+      "Splits": null
+    }
+  ],
+  "IsSuccess": true,
+  "ErrorMessage": null
+}

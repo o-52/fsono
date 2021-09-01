@@ -1,0 +1,108 @@
+{
+  "Event": {
+    "Name": "Чемпионат и Первенство Нижегородской области по спортивному ориентированию\r\nДисциплина «кросс – марафон» (Чемпионат)\r\nКод дисциплины 0830041811Л",
+    "Date": "2021-08-28T00:00:00+03:00",
+    "Location": "Нижний Новгород",
+    "TimeZone": 3
+  },
+  "Competitors": [
+    {
+      "LastName": "Дворянчикова",
+      "FirstName": "Яна",
+      "BirthYear": "2005",
+      "StartNumber": "67",
+      "Class": "Ж16",
+      "Team": "Бор",
+      "Rank": "I",
+      "StartTime": "11:01:00",
+      "SiCard": "8665965",
+      "Splits": null
+    },
+    {
+      "LastName": "Залялова",
+      "FirstName": "Анжелика",
+      "BirthYear": "2006",
+      "StartNumber": "267",
+      "Class": "Ж16",
+      "Team": "Стародумов",
+      "Rank": "Iю",
+      "StartTime": "11:02:00",
+      "SiCard": "1882882",
+      "Splits": null
+    },
+    {
+      "LastName": "Коробкова",
+      "FirstName": "Алина",
+      "BirthYear": "2006",
+      "StartNumber": "63",
+      "Class": "Ж16",
+      "Team": "Бор",
+      "Rank": "I",
+      "StartTime": "11:03:00",
+      "SiCard": "8664445",
+      "Splits": null
+    },
+    {
+      "LastName": "Черёмухина",
+      "FirstName": "Ксения",
+      "BirthYear": "2006",
+      "StartNumber": "68",
+      "Class": "Ж16",
+      "Team": "ДЮСШ № 12 Творогова",
+      "Rank": "I",
+      "StartTime": "11:04:00",
+      "SiCard": "8182081",
+      "Splits": null
+    },
+    {
+      "LastName": "Завадская",
+      "FirstName": "Ольга",
+      "BirthYear": "2006",
+      "StartNumber": "65",
+      "Class": "Ж16",
+      "Team": "Бор",
+      "Rank": "КМС",
+      "StartTime": "11:05:00",
+      "SiCard": "8665967",
+      "Splits": null
+    },
+    {
+      "LastName": "Уральцева",
+      "FirstName": "Карина",
+      "BirthYear": "2006",
+      "StartNumber": "69",
+      "Class": "Ж16",
+      "Team": "Бор",
+      "Rank": "I",
+      "StartTime": "11:06:00",
+      "SiCard": "8665968",
+      "Splits": null
+    },
+    {
+      "LastName": "Глушкова",
+      "FirstName": "Екатерина",
+      "BirthYear": "2006",
+      "StartNumber": "66",
+      "Class": "Ж16",
+      "Team": "ДЮСШ № 12 Творогова",
+      "Rank": "I",
+      "StartTime": "11:07:00",
+      "SiCard": "1421641",
+      "Splits": null
+    },
+    {
+      "LastName": "Колохина",
+      "FirstName": "Алина",
+      "BirthYear": "2005",
+      "StartNumber": "64",
+      "Class": "Ж16",
+      "Team": "Нижегородский район",
+      "Rank": "I",
+      "StartTime": "11:08:00",
+      "SiCard": "8122915",
+      "Splits": null
+    }
+  ],
+  "IsSuccess": true,
+  "ErrorMessage": null
+}
