@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+
+    <title>Start List - SportOrg</title>
+    
+
+    
+<style>
+    p,
+    blockquote,
+    ul,
+    ol,
+    dl,
+    table,
+    pre {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    table.sportorg-table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: keep-all;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    table.sportorg-table th {
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        margin-bottom: 5px;
+    }
+
+    table.sportorg-table th,
+    table.sportorg-table td {
+        padding: 3px 13px;
+        text-align: left;
+        /*border: 1px solid #ddd;*/
+    }
+
+    table.sportorg-table tr {
+        background-color: #fff;
+        /*border-top: 1px solid #ccc;*/
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    /*table.sportorg-table tr:nth-child(2n) {*/
+        /*background-color: #f8f8f8;*/
+    /*}*/
+
+    table.empty-table {
+        width: auto;
+    }
+
+    table.empty-table tr {
+        background-color: white;
+        border: 0;
+    }
+
+    table.empty-table td, table.empty-table th {
+        border: 0;
+    }
+
+    hr {
+        box-sizing: content-box;
+        height: 0;
+    }
+
+    hr {
+        height: 0;
+        margin: 15px 0;
+        overflow: hidden;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    hr:before {
+        display: table;
+        content: "";
+    }
+
+    hr:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    hr {
+        height: 4px;
+        padding: 0;
+        margin: 16px 0;
+        background-color: #e7e7e7;
+        border: 0 none;
+    }
+
+    a:not([href]) {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a {
+        color: #4078c0;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active {
+        text-decoration: underline;
+    }
+
+    a {
+        background-color: transparent;
+    }
+
+    a:active,
+    a:hover {
+        outline: 0;
+    }
+
+    .print-only {
+        display: none;
+    }
+
+    .no-print {
+        display: block;
+    }
+
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* SPLITS */
+
+    .table-leg {
+        padding: 0;
+        margin: 0;
+    }
+
+    .table-leg th,
+    .table-leg td {
+        border: 0;
+    }
+
+    .table-leg tr {
+        border-top: 0;
+    }
+
+    .result-1,
+    .result-2,
+    .result-3 {
+        font-weight: bold;
+    }
+
+    .result-1 {
+        /*background: gold;*/
+    }
+
+    .result-2 {
+        /*background: silver;*/
+    }
+
+    .result-3 {
+        /*background: #cd7f32;*/
+    }
+
+    @media print {
+        @page {
+            margin: 0.5cm;
+        }
+
+        body {
+            font-size: 85%;
+        }
+
+        table.sportorg-table {
+            display: table;
+            width: 100%;
+        }
+
+        table.sportorg-table th,
+        table.sportorg-table td {
+            padding: 1px 10px;
+        }
+
+        table.sportorg-table,
+        pre {
+            margin-bottom: 1px;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 1px 0;
+        }
+
+        section, .new-page {
+            page-break-before: always;
+        }
+
+        ul {
+            page-break-inside: avoid;
+        }
+
+        p {
+            widows: 4;
+        }
+
+        a[href^="http"]:after {
+            content: " (" attr(href) ")";
+        }
+
+        abbr[title]:after {
+            content: " (" attr(title) ")";
+        }
+
+        .print-only {
+            display: inline;
+        }
+
+        .no-print {
+            display: none;
+        }
+    }
+</style>
+
+    
+<style>
+    /* SETTINGS */
+    .sportorg-settings {
+        position: fixed;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        background: white;
+        top: 3px;
+        right: 3px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .sportorg-settings-row {
+        margin: 5px;
+    }
+
+    @media print {
+        .sportorg-settings {
+            display: none;
+        }
+    }
+</style>
+<script>
+    var MAX_ORG_NAME = 30;
+    var MAX_PERSON_NAME = 30;
+
+    var TableGenerator = (function () {
+        var Table = function () {
+            return document.createElement('table');
+        };
+        var THead = function () {
+            return document.createElement('thead');
+        };
+        var TBody = function () {
+            return document.createElement('tbody');
+        };
+        var Tr = function () {
+            return document.createElement('tr');
+        };
+        var Th = function () {
+            return document.createElement('th');
+        };
+        var Td = function () {
+            return document.createElement('td');
+        };
+
+        function TableGenerator(data, fields) {
+            this.data = data;
+            this.fields = fields;
+        }
+
+        TableGenerator.prototype.getTable = function (options) {
+            var table = Table();
+            if (options && options.className) table.className = options.className;
+            table.appendChild(this.getHead());
+            table.appendChild(this.getBody());
+            return table;
+        };
+
+        TableGenerator.prototype.getHead = function () {
+            var tr = Tr();
+            for (var _i = 0, _a = this.headers(); _i < _a.length; _i++) {
+                var key = _a[_i];
+                var th = Th();
+                var title = this.getHeaderName(key);
+                if (title instanceof Node) {
+                    th.appendChild(title);
+                }
+                else {
+                    th.appendChild(document.createTextNode(title));
+                }
+                tr.appendChild(th);
+            }
+            var thead = THead();
+            thead.appendChild(tr);
+            return thead;
+        };
+
+        TableGenerator.prototype.getBody = function () {
+            var tbody = TBody();
+            var cols = this.headers().length;
+            for (var _b = 0, _c = this.data; _b < _c.length; _b++) {
+                var obj = _c[_b];
+                var tr = Tr();
+                if (obj instanceof Node || typeof obj === 'string') {
+                    var td = Td();
+                    td.colSpan = cols;
+                    if (typeof obj === 'string') {
+                        td.appendChild(document.createTextNode(obj));
+                    }
+                    else {
+                        td.appendChild(obj);
+                    }
+                    tr.appendChild(td);
+                }
+                else {
+                    for (var _i = 0, _a = this.headers(); _i < _a.length; _i++) {
+                        var key = _a[_i];
+                        var td = Td();
+                        if (obj[key]) {
+                            if (obj[key] instanceof Node) {
+                                td.appendChild(obj[key]);
+                            }
+                            else {
+                                td.appendChild(document.createTextNode(obj[key]));
+                            }
+                        }
+                        tr.appendChild(td);
+                    }
+                }
+                tbody.appendChild(tr);
+            }
+            return tbody;
+        };
+
+        TableGenerator.prototype.headers = function () {
+            if (this._headers) {
+                return this._headers
+            }
+            if (!this.fields) {
+                var headers = {};
+                for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
+                    var obj = _a[_i];
+                    for (var key in obj) {
+                        headers[key] = true;
+                    }
+                }
+                this._headers = Object.keys(headers)
+            } else if (this.fields instanceof Array) {
+                this._headers = [];
+                for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                    var field = _a[_i];
+                    if (typeof field === 'string') {
+                        this._headers.push(field);
+                    }
+                    else if (field.active !== false) {
+                        this._headers.push(field.key);
+                    }
+                }
+            }
+            return this._headers;
+        };
+
+        TableGenerator.prototype.getHeaderName = function (key) {
+            if (this.fields && this.fields instanceof Array) {
+                for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                    var field = _a[_i];
+                    if (typeof field === 'object' && field.key === key) {
+                        return field.title;
+                    }
+                }
+            }
+            return key;
+        };
+
+        return TableGenerator
+    }());
+
+    var TableTextGenerator = (function () {
+
+        function TableTextGenerator(data, fields) {
+            this.data = data;
+            this.fields = fields;
+        }
+
+        TableTextGenerator.prototype.getTable = function (options) {
+            var node = document.createElement('pre');
+            if (options && options.className) node.className = options.className;
+            node.appendChild(this.getHead());
+            node.appendChild(this.getBody());
+            return node;
+        };
+
+        TableTextGenerator.prototype.getSliceText = function (text, size) {
+            if (text === undefined) {
+                text = '';
+            }
+            text = String(text);
+            if (size) {
+                text = text.slice(0, size);
+                if (text.length < size + 1) {
+                    var arr = [];
+                    for (var i = 0; i < size + 1 - text.length; i++) {
+                        arr.push(' ');
+                    }
+                    text += arr.join('');
+                }
+            } else {
+                text += '\t';
+            }
+            return text;
+        };
+
+        TableTextGenerator.prototype.getHead = function () {
+            var text = '';
+            for (var _i = 0, _a = this.headers(); _i < _a.length; _i++) {
+                var key = _a[_i];
+                var h = this.getHeaderObj(key);
+                var title = h && h.title;
+                var size = h && h.size;
+                if (size) {
+                    text += this.getSliceText(title, size);
+                } else {
+                    text += title;
+                }
+            }
+            text += '\n';
+            var blockU = document.createElement('u');
+            var blockB = document.createElement('b');
+            blockB.appendChild(document.createTextNode(text));
+            blockU.appendChild(blockB);
+            return blockU;
+        };
+
+        TableTextGenerator.prototype.getBody = function () {
+            var text = '';
+            for (var _b = 0, _c = this.data; _b < _c.length; _b++) {
+                var obj = _c[_b];
+                if (typeof obj === 'string') {
+                    text += obj;
+                } else {
+                    for (var _i = 0, _a = this.headers(); _i < _a.length; _i++) {
+                        var key = _a[_i];
+                        var h = this.getHeaderObj(key);
+                        var size = h && h.size;
+                        if (size) {
+                            text += this.getSliceText(obj[key], size);
+                        } else {
+                            text += obj[key];
+                        }
+                    }
+                }
+                text += '\n';
+            }
+            return document.createTextNode(text);
+        };
+
+        TableTextGenerator.prototype.headers = function () {
+            if (this._headers) {
+                return this._headers
+            }
+            if (!this.fields) {
+                var headers = {};
+                for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
+                    var obj = _a[_i];
+                    for (var key in obj) {
+                        headers[key] = true;
+                    }
+                }
+                this._headers = Object.keys(headers)
+            } else if (this.fields instanceof Array) {
+                this._headers = [];
+                for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                    var field = _a[_i];
+                    if (typeof field === 'string') {
+                        this._headers.push(field);
+                    }
+                    else if (field.active !== false) {
+                        this._headers.push(field.key);
+                    }
+                }
+            }
+            return this._headers;
+        };
+
+        TableTextGenerator.prototype.getHeaderName = function (key) {
+            if (this.fields && this.fields instanceof Array) {
+                for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                    var field = _a[_i];
+                    if (typeof field === 'object' && field.key === key) {
+                        return field.title;
+                    }
+                }
+            }
+            return key;
+        };
+
+        TableTextGenerator.prototype.getHeaderObj = function (key) {
+            if (this.fields && this.fields instanceof Array) {
+                for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                    var field = _a[_i];
+                    if (typeof field === 'object' && field.key === key) {
+                        return field;
+                    }
+                }
+            }
+        };
+
+        return TableTextGenerator
+    }());
+
+    var SettingsGenerator = (function () {
+        var Block = function () {
+            var el = document.createElement('div');
+            el.className = 'sportorg-settings';
+            return el
+        };
+        var Row = function () {
+            var el = document.createElement('div');
+            el.className = 'sportorg-settings-row';
+            return el
+        };
+
+        function SettingsGenerator(settings) {
+            this.settings = settings;
+            this.isShow = true;
+        }
+
+        SettingsGenerator.prototype.show = function () {
+            var block = Block();
+            this.el = block;
+            for (var _i = 0, _a = this.settings; _i < _a.length; _i++) {
+                var setting = _a[_i];
+                var row = Row();
+                row.className = row.className + ' ' + 'sportorg-settings-hidden';
+                row.appendChild(this.getElBySetting(setting));
+                block.appendChild(row);
+            }
+            var btn = Row();
+            btn.appendChild(this.getHiddenButton());
+            block.appendChild(btn);
+            document.body.appendChild(block);
+            this.toggleHidden();
+        };
+        SettingsGenerator.prototype.getElBySetting = function (setting) {
+            if (typeof setting.value === 'boolean') {
+                var i = document.createElement('input');
+                i.type = 'checkbox';
+                if (setting.value) {
+                    i.checked = true;
+                }
+                if (setting.change) {
+                    i.onchange = function () {
+                        if (i.checked !== setting.value) {
+                            setting.change(i.checked);
+                            setting.value = i.checked;
+                        }
+                    }
+                }
+                var label = document.createElement('label');
+                label.appendChild(i);
+                label.appendChild(document.createTextNode(setting.title));
+                return label
+            } else if (setting.value instanceof Array) {
+                var s = document.createElement('select');
+                for (var _i = 0, _a = setting.value; _i < _a.length; _i++) {
+                    var obj = _a[_i];
+                    s.appendChild(new Option(obj.text, obj.value));
+                }
+                if (setting.change) {
+                    s.onchange = function () {
+                        var results = [];
+                        for (var _i = 0, _a = s.selectedOptions; _i < _a.length; _i++) {
+                            var item = _a[_i];
+                            results.push(item.value);
+                        }
+                        setting.change(results);
+                    };
+                }
+                var label = document.createElement('label');
+                label.appendChild(document.createTextNode(setting.title));
+                label.appendChild(s);
+                return label
+            }
+        };
+        SettingsGenerator.prototype.toggleHidden = function () {
+            var els = document.getElementsByClassName('sportorg-settings-hidden');
+            for (var _i = 0, els_ = els; _i < els_.length; _i++) {
+                var el = els_[_i];
+                if (this.isShow) {
+                    el.style.display = 'none';
+                    if (this.el) {
+                        this.el.style.opacity = '.3';
+                    }
+                }
+                else {
+                    el.style.display = 'block';
+                    if (this.el) {
+                        this.el.style.opacity = '1';
+                    }
+                }
+            }
+            this.isShow = !this.isShow;
+        };
+        SettingsGenerator.prototype.getHiddenButton = function () {
+            var el = document.createElement('button');
+            el.appendChild(document.createTextNode('Свернуть/Развернуть'));
+            var _this = this;
+            el.onclick = function (ev) { _this.toggleHidden() };
+            return el;
+        };
+        return SettingsGenerator;
+    }());
+
+    function toHHMMSS(value) {
+        if (value === 0) {
+            return '00:00:00'
+        }
+        if (!value) return '';
+        value /= 1000;
+        var hours = Math.floor(value / 3600);
+        value %= 3600;
+        var minutes = Math.floor(value / 60);
+        var seconds = ~~(value % 60);
+
+        var date = new Date(2000, 0, 1, hours, minutes, seconds);
+
+        var with0 = function (dd) {
+            return (dd < 10 ? '0' + dd : dd) + '';
+        };
+
+        return with0(date.getHours()) + ':' + with0(date.getMinutes()) + ':' + with0(date.getSeconds());
+    }
+
+    function getById(list, id) {
+        if (id) {
+            for (var _i = 0, list_ = list; _i < list_.length; _i++) {
+                var obj = list_[_i];
+                if (obj.id === id) {
+                    return obj;
+                }
+            }
+        }
+        return null;
+    }
+
+    function racePreparation(race) {
+        for (var _i = 0, _a = race.persons; _i < _a.length; _i++) {
+            var obj = _a[_i];
+            obj.organization = getById(race.organizations, obj.organization_id);
+            obj.group = getById(race.groups, obj.group_id);
+        }
+        for (var _b = 0, _c = race.results; _b < _c.length; _b++) {
+            var obj = _c[_b];
+            obj.status = obj.status === 16 ? 1 : obj.status;
+            obj.person = getById(race.persons, obj.person_id);
+        }
+        for (var _d = 0, _e = race.groups; _d < _e.length; _d++) {
+            var obj = _e[_d];
+            obj.course = getById(race.courses, obj.course_id);
+        }
+        for (var _f = 0, _g = ['groups', 'courses', 'organizations']; _f < _g.length; _f++) {
+            var itemName = _g[_f];
+            race[itemName].sort(function (a, b) {
+                if (a.name.toUpperCase() < b.name.toUpperCase())
+                    return -1;
+                if (a.name.toUpperCase() > b.name.toUpperCase())
+                    return 1;
+                return 0;
+            });
+        }
+        return race;
+    }
+
+    function getGroupsBlockElement(race) {
+        var groupBlock = document.createElement('div');
+        groupBlock.className = 'no-print';
+        for (var _i = 0, _a = race.groups; _i < _a.length; _i++) {
+            var group = _a[_i];
+            var a = document.createElement('a');
+            a.href = '#' + group.name;
+            a.appendChild(document.createTextNode(group.name + ' '));
+            groupBlock.appendChild(a);
+        }
+        return groupBlock;
+    }
+
+    function dateFormat(date) {
+        date = date ? new Date(date) : new Date();
+        return date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
+    }
+
+    var Qualification = {
+        '': 'б/р',
+        0: 'б/р',
+        3: 'IIIю',
+        2: 'IIю',
+        1: 'Iю',
+        6: 'III',
+        5: 'II',
+        4: 'I',
+        7: 'КМС',
+        8: 'МС',
+        9: 'МСМК'
+    };
+
+    var STATUS_PRIORITY = [8, 4, 3, 5, 13];
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+    }
+</script>
+
+</head>
+<body>
+<div id="content">
+<div class="text-center">
+    <h3>Чемпионат и Первенство Нижнего Новгорода<br>
+    12.03.2022  г. Нижний Новгород
+
+</h3>
+    <h2>ПРОТОКОЛ СТАРТА</h2>
+</div>
+<div id="start-list-tables"></div>
+<div>
+    <table class="empty-table">
+        <tr>
+            <td><b>Главный судья:</b></td>
+            <td width="150px"></td>
+            <td><b>Повышев И.А. (ССВК)</b></td>
+        </tr>
+        <tr>
+            <td><b>Главный секретарь:</b></td>
+            <td width="150px"></td>
+            <td><b>Коржук А.Д. (СС3К)</b></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var race = {"courses": [], "data": {"chief_referee": "\u041f\u043e\u0432\u044b\u0448\u0435\u0432 \u0418.\u0410. (\u0421\u0421\u0412\u041a)", "description": "\u0427\u0435\u043c\u043f\u0438\u043e\u043d\u0430\u0442 \u0438 \u041f\u0435\u0440\u0432\u0435\u043d\u0441\u0442\u0432\u043e \u041d\u0438\u0436\u043d\u0435\u0433\u043e \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434\u0430\u003cbr\u003e\n\u003cbr\u003e\n\u003cbr\u003e\n\u003cbr\u003e\n", "end_datetime": "2022-03-12 10:34:00", "location": " \u0433. \u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434\n\n", "race_type": 0, "relay_leg_count": 3, "secretary": "\u041a\u043e\u0440\u0436\u0443\u043a \u0410.\u0414. (\u0421\u04213\u041a)", "start_datetime": "2022-03-12 10:34:00", "title": "\u0427\u0435\u043c\u043f\u0438\u043e\u043d\u0430\u0442 \u0438 \u041f\u0435\u0440\u0432\u0435\u043d\u0441\u0442\u0432\u043e \u041d\u0438\u0436\u043d\u0435\u0433\u043e \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434\u0430\n\n\n\n", "url": "https://fsono.ru/"}, "groups": [{"__type": null, "count_finished": 0, "count_person": 7, "course_id": null, "first_number": 0, "id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "D", "object": "Group", "order_in_corridor": 0, "price": 400, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 28, "course_id": null, "first_number": 0, "id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "D12", "object": "Group", "order_in_corridor": 0, "price": 150, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 19, "course_id": null, "first_number": 0, "id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "D14", "object": "Group", "order_in_corridor": 0, "price": 200, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 9, "course_id": null, "first_number": 0, "id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "D17", "object": "Group", "order_in_corridor": 0, "price": 200, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 9, "course_id": null, "first_number": 0, "id": "ba355248-af33-4c35-afd8-b1302edf7302", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "M", "object": "Group", "order_in_corridor": 0, "price": 400, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 48, "course_id": null, "first_number": 0, "id": "e41e8538-a393-41cf-83b2-056688fdcd43", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "M12", "object": "Group", "order_in_corridor": 0, "price": 150, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 35, "course_id": null, "first_number": 0, "id": "15d857d7-d992-44e1-a851-0436cca15c80", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "M14", "object": "Group", "order_in_corridor": 0, "price": 200, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}, {"__type": null, "count_finished": 0, "count_person": 33, "course_id": null, "first_number": 0, "id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "is_any_course": false, "long_name": "", "max_age": 0, "max_time": 0, "max_year": 0, "min_age": 0, "min_year": 0, "name": "M17", "object": "Group", "order_in_corridor": 0, "price": 200, "ranking": {"is_active": false, "rank": [{"is_active": false, "max_place": "2", "max_time": null, "percent": 0, "qual": 8, "use_scores": false}, {"is_active": false, "max_place": "6", "max_time": null, "percent": 0, "qual": 7, "use_scores": false}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 4, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 5, "use_scores": true}, {"is_active": true, "max_place": "0", "max_time": null, "percent": 0, "qual": 6, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 1, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 2, "use_scores": true}, {"is_active": false, "max_place": "0", "max_time": null, "percent": 0, "qual": 3, "use_scores": true}], "rank_scores": 0}, "relay_legs": 0, "sex": 0, "start_corridor": 0, "start_interval": 0}], "id": "9fc321e1-56d1-4ed1-a66d-0bd599473eff", "object": "Race", "organizations": [{"code": "", "contact": "", "count_person": 22, "country": "", "id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "name": "\u0421\u0442\u0430\u0440\u043e\u0434\u0443\u043c\u043e\u0432", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 15, "country": "", "id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "name": "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434, \u043b\u0438\u0447\u043d", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 7, "country": "", "id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "name": "\u041c\u0410\u041e\u0423 \u0428\u043a\u043e\u043b\u0430 \u211649", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 2, "country": "", "id": "13584e78-3bc9-441f-8b91-9ed2862752d2", "name": "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 16, "country": "", "id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "name": "\u041c\u0430\u0433\u043d\u0438\u0442\u043d\u0430\u044f \u0421\u0442\u0440\u0435\u043b\u043a\u0430 \u0422\u0440\u0443", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 2, "country": "", "id": "697ffd2d-1ede-44c3-9198-14cec5edd2bc", "name": "\u041c\u0411\u041e\u0423 \u0414\u041e\u0414 \u0414\u042e\u0421\u0428 \u0027\u041d\u0438\u0436\u0435\u0433\u043e", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 1, "country": "", "id": "74c941ed-17f7-4b49-9b3e-8abec175facd", "name": "\u0428\u0432\u0435\u0439\u0446\u0430\u0440\u0438\u044f", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 11, "country": "", "id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "name": "\u041d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0435\u0446 (\u0421\u0435\u043c\u0435\u043d\u043e\u0432\u0430", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 6, "country": "", "id": "2426d984-3699-4df9-a051-bdac8320cadb", "name": "\u0411\u043e\u0440", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 1, "country": "", "id": "876337d9-b7d7-4100-a294-815587c97a9a", "name": "\u0421\u0414\u042e\u0421\u0428\u041e\u0420 \u211612", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 10, "country": "", "id": "31267bbe-6332-4d28-81bf-053894eed3e0", "name": "\u0421\u0428\u041e\u0420 \u2116 12 \u0417\u0430\u0432\u044b\u043b\u043e\u0432\u0430", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 22, "country": "", "id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "name": "\u0414\u042e\u0421\u0428 \u2116 12 \u0422\u0432\u043e\u0440\u043e\u0433\u043e\u0432\u0430", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 29, "country": "", "id": "96ecc810-dc40-460f-9130-816fb3966620", "name": "\u0421\u0428 \u211612 \u0415\u043a\u0438\u0448\u0435\u0432, \u0415\u0440\u0435\u043c\u0438\u043d", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 7, "country": "", "id": "a69991af-f23c-4237-96ed-16292b1c713d", "name": "\u0421\u0414\u042e\u0421\u0428\u041e\u0420\u211612 \u0429\u0443\u0440\u043e\u0432\u0430", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 18, "country": "", "id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "name": "\u0421\u0428 12- \u0432\u0435\u043b\u043e", "object": "Organization", "region": ""}, {"code": "", "contact": "", "count_person": 19, "country": "", "id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "name": "\u0421\u0414\u042e\u0421\u0428\u041e\u0420\u211612 \u041c\u0410\u0420\u0422", "object": "Organization", "region": ""}], "persons": [{"bib": 1, "birth_date": "1989-01-01", "card_number": 8050989, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "1ac9f5db-2b3a-4941-8eaf-efe1912b1a71", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u0438\u0440\u0438\u043b\u043b", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 8, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0421\u0442\u0430\u0440\u043e\u0434\u0443\u043c\u043e\u0432", "world_code": null, "year": 1989}, {"bib": 2, "birth_date": "1998-01-01", "card_number": 8665998, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "6d875b04-6f1e-4308-8def-ce9903c1bfd8", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0432\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 8, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0413\u043e\u043b\u0443\u0431\u0435\u0432", "world_code": null, "year": 1998}, {"bib": 3, "birth_date": "1989-01-01", "card_number": 8188118, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "da145a0c-cb39-4553-a5e9-e81fa3ac5cba", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0433\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "13584e78-3bc9-441f-8b91-9ed2862752d2", "qual": 8, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u041a\u0430\u043b\u0438\u043d\u043d\u0438\u043a\u043e\u0432", "world_code": null, "year": 1989}, {"bib": 4, "birth_date": "1998-01-01", "card_number": 8009999, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "12135fb6-d1e4-4eff-819c-63223cf1f0dd", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "13584e78-3bc9-441f-8b91-9ed2862752d2", "qual": 8, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0421\u0442\u0435\u043f\u0430\u043d\u043e\u0432\u0430", "world_code": null, "year": 1998}, {"bib": 5, "birth_date": "2004-01-01", "card_number": 8666431, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "c14cfdc7-ca59-4991-ac92-4b6909525993", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0435\u0440\u0433\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 7, "sex": 0, "start_group": 0, "start_time": 36000000, "surname": "\u0415\u043b\u0438\u0441\u0435\u0435\u0432", "world_code": null, "year": 2004}, {"bib": 6, "birth_date": "2003-01-01", "card_number": 2008498, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "91548b41-21c3-43ad-bf54-40b1809a43e3", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u0438\u0440\u0438\u043b\u043b", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 7, "sex": 0, "start_group": 0, "start_time": 36000000, "surname": "\u0421\u0438\u0431\u0438\u0440\u044f\u043a\u043e\u0432", "world_code": null, "year": 2003}, {"bib": 7, "birth_date": "2003-01-01", "card_number": 8275018, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "3ae3e739-6bf5-4a49-b9fb-bf40c88cd4e7", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 4, "sex": 0, "start_group": 0, "start_time": 36000000, "surname": "\u0414\u043e\u043a\u0443\u0447\u0430\u0435\u0432", "world_code": null, "year": 2003}, {"bib": 8, "birth_date": "1974-01-01", "card_number": 8269262, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "dbdb02c3-6f40-4ffe-937a-82f8c36e04fb", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 4, "sex": 0, "start_group": 0, "start_time": 36000000, "surname": "\u0413\u043e\u043b\u0443\u0431\u0435\u0432", "world_code": null, "year": 1974}, {"bib": 9, "birth_date": "1980-01-01", "card_number": 1633035, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "ba355248-af33-4c35-afd8-b1302edf7302", "id": "2551fd05-88a3-4cc3-a15f-c817b503bc28", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0413\u0435\u043e\u0440\u0433\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 0, "sex": 0, "start_group": 0, "start_time": 36000000, "surname": "\u041f\u0435\u0440\u0435\u043b\u044c\u043c\u0430\u043d", "world_code": null, "year": 1980}, {"bib": 51, "birth_date": "2006-01-01", "card_number": 8654825, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "20388fc7-fdae-44e8-8936-a9c6fb2263a9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0435\u0440\u0433\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0415\u0440\u0435\u043c\u0438\u043d", "world_code": null, "year": 2006}, {"bib": 52, "birth_date": "2007-01-01", "card_number": 8269282, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "e8dd3446-bc60-4bf6-bdbf-b9cceea12f6a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u043d\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u041a\u0443\u0440\u043d\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 53, "birth_date": "2005-01-01", "card_number": 8470100, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "5b98c464-2ec8-4bf2-a7a9-62764891f2ac", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0421\u0430\u0437\u043e\u043d\u043e\u0432", "world_code": null, "year": 2005}, {"bib": 54, "birth_date": "2007-01-01", "card_number": 8269256, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "4e3100b0-c5a3-4e8c-b0e7-a6696d31157a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041e\u043b\u0435\u0433", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0421\u0438\u0431\u0438\u0440\u044f\u043a\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 55, "birth_date": "2007-01-01", "card_number": 8269274, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "c8d20724-2a02-4776-ada0-d5ef1f9cd781", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041f\u0440\u043e\u0445\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0421\u0438\u0434\u043e\u0440\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 56, "birth_date": "2005-01-01", "card_number": 8003241, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "84ed384a-1629-4208-a360-2719152e633f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36000000, "surname": "\u0428\u0435\u0432\u0447\u0443\u043a", "world_code": null, "year": 2005}, {"bib": 57, "birth_date": "2007-01-01", "card_number": 8182053, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "ec1d4147-08fa-429d-bd85-0dad34e0980b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0441\u0435\u043d\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0411\u0430\u0440\u0438\u043d\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 58, "birth_date": "2007-01-01", "card_number": 8122829, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "219685b4-b3b9-411b-b344-81ae3e271f36", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0432\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0413\u0443\u0441\u0435\u0432", "world_code": null, "year": 2007}, {"bib": 59, "birth_date": "2007-01-01", "card_number": 8275008, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "83b134e6-deb3-4723-954a-b42c36c219d7", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0442\u0435\u043f\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0416\u0438\u043b\u0435\u043d\u043a\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 60, "birth_date": "2007-01-01", "card_number": 8199733, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "85bada16-7de4-4ff8-a4bf-94c35b5f3bb1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u041a\u0430\u043b\u0438\u043a\u0438\u043d", "world_code": null, "year": 2007}, {"bib": 61, "birth_date": "2008-01-01", "card_number": 8681420, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "e6868b99-b7da-4905-bd6f-1594a028603b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0420\u043e\u043c\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u041a\u043e\u043c\u0430\u0440\u043e\u0432", "world_code": null, "year": 2008}, {"bib": 62, "birth_date": "2006-01-01", "card_number": 8122928, "comment": "?? 200", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "c020e5de-141a-4eb6-b51d-711751cc026f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0424\u0435\u0434\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u041c\u0438\u043d\u0438\u043d", "world_code": null, "year": 2006}, {"bib": 63, "birth_date": "2008-01-01", "card_number": 8269285, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "1555664d-520a-4293-ab39-53f084266d40", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0442\u0432\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u041d\u0435\u0441\u0442\u0435\u0440\u0435\u043d\u043a\u043e", "world_code": null, "year": 2008}, {"bib": 64, "birth_date": "2007-01-01", "card_number": 8275288, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "567306c7-72fb-4abf-937a-175208165fe2", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0433\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u041f\u0430\u0432\u043b\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 65, "birth_date": "2007-01-01", "card_number": 8170100, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "2c7823ba-c9c7-4451-9e2d-94eada465001", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041f\u0430\u0432\u0435\u043b", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0421\u0430\u0437\u043e\u043d\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 66, "birth_date": "2006-01-01", "card_number": 8654712, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "623e9256-fed3-4683-89d0-12d838dc1168", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0413\u043e\u0440\u0434\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0421\u0442\u0435\u043f\u0443\u0448\u043e\u0432", "world_code": null, "year": 2006}, {"bib": 67, "birth_date": "2007-01-01", "card_number": 8182055, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "e26626a6-5821-4457-9981-0059d4873c8e", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0422\u0440\u043e\u0444\u0438\u043c\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 68, "birth_date": "2007-01-01", "card_number": 8122886, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "21bff509-e297-4b5b-8c9c-bd55b51f6054", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0438\u0445\u0430\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0422\u0440\u0443\u0431\u043d\u0438\u043a\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 69, "birth_date": "2007-01-01", "card_number": 8122979, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "f6c4a310-0ed0-4a0f-be0c-118926e6f1ef", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0432\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36000000, "surname": "\u0426\u0438\u043b\u0438\u043d", "world_code": null, "year": 2007}, {"bib": 70, "birth_date": "2007-01-01", "card_number": 8275292, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "e5efb991-f75e-40d1-ad4b-e2d0ea1e4bf8", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 5, "sex": 0, "start_group": 3, "start_time": 36000000, "surname": "\u0413\u0430\u0440\u0435\u0435\u0432", "world_code": null, "year": 2007}, {"bib": 71, "birth_date": "2007-01-01", "card_number": 8275004, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "3d961826-58b2-4297-a8ba-93f4cd2d0405", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 5, "sex": 0, "start_group": 3, "start_time": 36000000, "surname": "\u041a\u0438\u0440\u0438\u043b\u043b\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 72, "birth_date": "2007-01-01", "card_number": 1411553, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "abc794c8-906c-4d2c-854f-0df5a324781a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042e\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "697ffd2d-1ede-44c3-9198-14cec5edd2bc", "qual": 5, "sex": 0, "start_group": 3, "start_time": 36000000, "surname": "\u0425\u043e\u0440\u0435\u0432", "world_code": null, "year": 2007}, {"bib": 73, "birth_date": "2007-01-01", "card_number": 8372146, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "f228eedd-3eb6-4c34-a0b5-90a63617d833", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 6, "sex": 0, "start_group": 4, "start_time": 36000000, "surname": "\u0410\u043c\u0431\u0430\u0440\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 74, "birth_date": "2006-01-01", "card_number": 1097577, "comment": "?? 200", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "e3cac6f5-293a-4ecf-86f1-11eebb51c008", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0441\u0435\u0432\u043e\u043b\u043e\u0434", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 6, "sex": 0, "start_group": 4, "start_time": 36000000, "surname": "\u041a\u0443\u043a\u0443\u0448\u043a\u0438\u043d", "world_code": null, "year": 2006}, {"bib": 75, "birth_date": "2007-01-01", "card_number": 2, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "1201ba4d-2376-4563-aa89-f0c8fd43e7da", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041f\u0430\u0432\u0435\u043b", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 6, "sex": 0, "start_group": 4, "start_time": 36000000, "surname": "\u0421\u043c\u0438\u0440\u043d\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 76, "birth_date": "2007-01-01", "card_number": 1425043, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "306af2da-cef3-4d69-8a5f-cd82818368e0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 6, "sex": 0, "start_group": 4, "start_time": 36000000, "surname": "\u0428\u0438\u0448\u043a\u0438\u043d", "world_code": null, "year": 2007}, {"bib": 77, "birth_date": "2005-01-01", "card_number": 1403815, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "0ac5f81c-bef4-4878-8668-e9b60ea6a3d0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 6, "sex": 0, "start_group": 4, "start_time": 36000000, "surname": "\u0428\u043a\u0430\u043f\u043e\u0432", "world_code": null, "year": 2005}, {"bib": 78, "birth_date": "2007-01-01", "card_number": 2008490, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "e00daa4f-8a56-48a6-b740-f06fc387aff1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 1, "sex": 0, "start_group": 5, "start_time": 36000000, "surname": "\u0411\u043b\u0438\u043d\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 79, "birth_date": "2007-01-01", "card_number": 8681416, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "9dcb92de-276c-41b7-a9ce-8838ff63db41", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0413\u043b\u0435\u0431", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 1, "sex": 0, "start_group": 5, "start_time": 36000000, "surname": "\u0412\u043e\u043b\u044c\u0444\u0435\u043d\u0437\u043e\u043d", "world_code": null, "year": 2007}, {"bib": 80, "birth_date": "2007-01-01", "card_number": 8372124, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "2095244b-3f37-4d3b-8fd7-9e375b176af9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 1, "sex": 0, "start_group": 5, "start_time": 36000000, "surname": "\u0421\u0430\u043b\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 81, "birth_date": "2007-01-01", "card_number": 1009490, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "33813169-077f-4bfb-b93c-f33d58aa25d0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 1, "sex": 0, "start_group": 5, "start_time": 36000000, "surname": "\u0428\u0432\u0435\u0446\u043e\u0432", "world_code": null, "year": 2007}, {"bib": 82, "birth_date": "2006-01-01", "card_number": 8664425, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "d0f0cb3d-40b5-47f7-8da3-96280570e5c4", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0433\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 3, "sex": 0, "start_group": 6, "start_time": 36000000, "surname": "\u041a\u0443\u0440\u043e\u0432", "world_code": null, "year": 2006}, {"bib": 83, "birth_date": "2005-01-01", "card_number": 0, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "7ef0ba60-245b-42a2-b4c3-cf4861d2f752", "id": "21b53854-472c-4d40-bcf0-db935c39db20", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 0, "sex": 0, "start_group": 6, "start_time": 36000000, "surname": "\u041f\u0440\u0435\u0434\u0435\u0438\u043d", "world_code": null, "year": 2005}, {"bib": 101, "birth_date": "1993-01-01", "card_number": 8280593, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "850a44a3-e732-4d33-9409-608ae601fbc1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 8, "sex": 0, "start_group": 1, "start_time": 36300000, "surname": "\u0413\u043e\u043b\u043e\u0432\u0438\u043d\u0430", "world_code": null, "year": 1993}, {"bib": 102, "birth_date": "1964-01-01", "card_number": 8654759, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "27735086-10cd-4c15-8a43-ec6c3805ab96", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041e\u043a\u0441\u0430\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 8, "sex": 0, "start_group": 0, "start_time": 36300000, "surname": "\u041c\u0430\u0440\u0442\u044c\u044f\u043d\u043e\u0432\u0430", "world_code": null, "year": 1964}, {"bib": 103, "birth_date": "1998-01-01", "card_number": 8275295, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "903eb167-f24d-4058-ba37-ca143a532cf1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430", "national_code": null, "object": "Person", "organization_id": "74c941ed-17f7-4b49-9b3e-8abec175facd", "qual": 7, "sex": 0, "start_group": 0, "start_time": 36300000, "surname": "\u0413\u0443\u043b\u0435\u0432\u0441\u043a\u0438\u0445", "world_code": null, "year": 1998}, {"bib": 104, "birth_date": "1975-01-01", "card_number": 8101984, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "25dd7bab-c447-4c7c-a0eb-b1e00b861b52", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0430\u0442\u0430\u043b\u044c\u044f", "national_code": null, "object": "Person", "organization_id": "2426d984-3699-4df9-a051-bdac8320cadb", "qual": 4, "sex": 0, "start_group": 0, "start_time": 36300000, "surname": "\u0428\u0438\u043a\u0443\u043b\u043e", "world_code": null, "year": 1975}, {"bib": 105, "birth_date": "2004-01-01", "card_number": 8182058, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "1a738651-c9c2-4179-8236-5d547df77b4c", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042f\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 4, "sex": 0, "start_group": 0, "start_time": 36300000, "surname": "\u0411\u0430\u0440\u0430\u043d\u043e\u0432\u0430", "world_code": null, "year": 2004}, {"bib": 106, "birth_date": "1974-01-01", "card_number": 0, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "88763fa0-9e42-46fb-86a4-98bcb1f09167", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 0, "sex": 0, "start_group": 0, "start_time": 36300000, "surname": "\u0421\u0435\u043b\u0435\u0437\u0435\u043d\u0435\u0432\u0430", "world_code": null, "year": 1974}, {"bib": 107, "birth_date": "1983-01-01", "card_number": 2135135, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "91407dc0-de69-4610-adc4-7e2077e6a74f", "id": "fe9bdc79-8426-485a-8a4d-4a38d85c0e3a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 0, "sex": 0, "start_group": 0, "start_time": 36300000, "surname": "\u041f\u0440\u0435\u0434\u0435\u0438\u043d\u0430", "world_code": null, "year": 1983}, {"bib": 151, "birth_date": "2006-01-01", "card_number": 8665967, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "9008e11d-30a7-4d3e-bf4d-065b395e5d2f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041e\u043b\u044c\u0433\u0430", "national_code": null, "object": "Person", "organization_id": "2426d984-3699-4df9-a051-bdac8320cadb", "qual": 7, "sex": 0, "start_group": 1, "start_time": 36300000, "surname": "\u0417\u0430\u0432\u0430\u0434\u0441\u043a\u0430\u044f", "world_code": null, "year": 2006}, {"bib": 152, "birth_date": "2008-01-01", "card_number": 8122825, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "e4f0edfe-389e-4093-94b3-5c7d31794130", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u0441\u0438\u043b\u0438\u0441\u0430", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u0413\u043e\u0440\u0434\u0435\u0435\u0432\u0430", "world_code": null, "year": 2008}, {"bib": 153, "birth_date": "2005-01-01", "card_number": 8665965, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "47e89f42-0fb9-4d8d-b064-3f10f2bf5290", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042f\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "2426d984-3699-4df9-a051-bdac8320cadb", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u0414\u0432\u043e\u0440\u044f\u043d\u0447\u0438\u043a\u043e\u0432\u0430", "world_code": null, "year": 2005}, {"bib": 154, "birth_date": "2007-01-01", "card_number": 8275291, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "0699d8df-2dbf-4cb2-9011-16bd5d9ef5d0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u0411\u043e\u0440\u043e\u0432\u043a\u043e\u0432\u0430", "world_code": null, "year": 2007}, {"bib": 155, "birth_date": "2006-01-01", "card_number": 8664445, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "a72bc756-b846-4359-9dd1-6328945c6684", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "2426d984-3699-4df9-a051-bdac8320cadb", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u041a\u043e\u0440\u043e\u0431\u043a\u043e\u0432\u0430", "world_code": null, "year": 2006}, {"bib": 156, "birth_date": "2008-01-01", "card_number": 8031909, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "ec25aadc-7603-443c-adbd-8797d3c5c65c", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041f\u043e\u043b\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u0420\u043e\u0433\u043e\u0436\u0438\u043d\u0430", "world_code": null, "year": 2008}, {"bib": 157, "birth_date": "2006-01-01", "card_number": 8665968, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "524a0975-f983-468d-8a1f-6f4d4897ce08", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u0430\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "2426d984-3699-4df9-a051-bdac8320cadb", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u0423\u0440\u0430\u043b\u044c\u0446\u0435\u0432\u0430", "world_code": null, "year": 2006}, {"bib": 158, "birth_date": "2006-01-01", "card_number": 8041069, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "4d7904e1-ec89-4cbc-8171-c7b37fb3be46", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 4, "sex": 0, "start_group": 2, "start_time": 36300000, "surname": "\u0413\u043b\u0443\u0448\u043a\u043e\u0432\u0430", "world_code": null, "year": 2006}, {"bib": 159, "birth_date": "2006-01-01", "card_number": 1882882, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "63e4a53f-9618-488c-a7ac-c926fc872e69", "id": "344e39dd-f512-4b42-8231-627e0de91822", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0436\u0435\u043b\u0438\u043a\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 5, "sex": 0, "start_group": 3, "start_time": 36300000, "surname": "\u0417\u0430\u043b\u044f\u043b\u043e\u0432\u0430", "world_code": null, "year": 2006}, {"bib": 201, "birth_date": "2009-01-01", "card_number": 8269242, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "a6ad9830-663c-430a-a1f4-e6c68478f550", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0442\u0435\u043c", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u0411\u0443\u0445\u043b\u0430\u043a\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 202, "birth_date": "2008-01-01", "card_number": 8269243, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "3469a935-2566-41c7-9dcc-4d7a15fdeca0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0430\u0432\u0435\u043b\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u0413\u043e\u043b\u0443\u0431\u0435\u0432", "world_code": null, "year": 2008}, {"bib": 203, "birth_date": "2008-01-01", "card_number": 8031906, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "150132b6-1d70-4189-b031-3f91c2a1c170", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0438\u0445\u0430\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u041b\u043e\u0441\u0435\u0432", "world_code": null, "year": 2008}, {"bib": 204, "birth_date": "2009-01-01", "card_number": 8169551, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "86e51c57-4924-4942-acab-c3fc5e370dc2", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0420\u043e\u043c\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u0411\u0435\u043b\u043e\u0437\u0435\u0440\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 205, "birth_date": "2009-01-01", "card_number": 8031930, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "1467c166-d430-43c7-bd55-d536fca4b5ee", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u0420\u043e\u0434\u044f\u043d\u0441\u043a\u0438\u0439", "world_code": null, "year": 2009}, {"bib": 206, "birth_date": "2008-01-01", "card_number": 8000273, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "4ae8e1b0-022c-46d7-b494-dddf590dd999", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u043d\u0438\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u0422\u044e\u043c\u0435\u043d\u043a\u043e\u0432", "world_code": null, "year": 2008}, {"bib": 207, "birth_date": "2009-01-01", "card_number": 8275290, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "4f5cb1cb-201a-4fe5-b2ad-ceffdc6500a8", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0442\u0435\u043c", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39600000, "surname": "\u0411\u043e\u0431\u044b\u043a", "world_code": null, "year": 2009}, {"bib": 208, "birth_date": "2009-01-01", "card_number": 8275215, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "a5809de2-2a31-4a32-8f42-71911ebbd7e9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u0441\u0438\u043b\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "697ffd2d-1ede-44c3-9198-14cec5edd2bc", "qual": 5, "sex": 0, "start_group": 2, "start_time": 39600000, "surname": "\u0425\u043e\u0440\u0435\u0432", "world_code": null, "year": 2009}, {"bib": 209, "birth_date": "2008-01-01", "card_number": 8275289, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "983042e0-9903-4f0c-a274-fe397ecfadb0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u043d\u0438\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 5, "sex": 0, "start_group": 2, "start_time": 39600000, "surname": "\u0420\u044f\u0431\u0438\u043d\u0438\u043d", "world_code": null, "year": 2008}, {"bib": 210, "birth_date": "2008-01-01", "card_number": 8283000, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "b49b2e90-738d-4fee-9277-259df79cbf7b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0442\u0430\u043d\u0438\u0441\u043b\u0430\u0432", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 5, "sex": 0, "start_group": 2, "start_time": 39600000, "surname": "\u042f\u0437\u043e\u0432\u0446\u0435\u0432", "world_code": null, "year": 2008}, {"bib": 211, "birth_date": "2008-01-01", "card_number": 1408305, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "973ad6a7-5ebb-4776-aeac-6d6d46510fa7", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u041c\u0438\u0442\u0440\u0438\u0447\u0435\u0432", "world_code": null, "year": 2008}, {"bib": 212, "birth_date": "2008-01-01", "card_number": 2152615, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "19478c22-294e-47cd-828f-831842e67b7b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u041d\u0430\u043c\u0435\u0442\u043a\u0438\u043d", "world_code": null, "year": 2008}, {"bib": 213, "birth_date": "2009-01-01", "card_number": 8372122, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "f85de77c-7ed1-417a-aab8-41043ec79865", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u043a\u0441\u0438\u043c", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u041d\u0435\u0432\u0430\u0435\u0432", "world_code": null, "year": 2009}, {"bib": 214, "birth_date": "2008-01-01", "card_number": 8681425, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "7bc06640-ab78-4d84-928d-4f349a202576", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u043d\u0438\u043b\u0430", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u041e\u0431\u0448\u043e\u043b\u043e\u0432", "world_code": null, "year": 2008}, {"bib": 215, "birth_date": "2008-01-01", "card_number": 1412531, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "97677115-3515-46aa-a319-cff9accda690", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0432\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u0428\u0435\u0441\u0442\u043e\u043f\u0430\u043b\u043e\u0432", "world_code": null, "year": 2008}, {"bib": 216, "birth_date": "2008-01-01", "card_number": 8372123, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "0436b445-9d77-46e6-a4a1-5afa469c1267", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u0428\u0442\u0435\u043f\u0430\u043d\u043e\u0432", "world_code": null, "year": 2008}, {"bib": 217, "birth_date": "2008-01-01", "card_number": 8372145, "comment": "??", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "0abd7adf-13c4-4fe3-a679-aa9a5cb962db", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 6, "sex": 0, "start_group": 3, "start_time": 39600000, "surname": "\u041a\u0430\u0437\u0430\u0447\u0435\u043a", "world_code": null, "year": 2008}, {"bib": 218, "birth_date": "2009-01-01", "card_number": 8372125, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "86caf1a4-5e56-4c8f-823a-386087fd12cd", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0411\u043e\u0440\u0438\u0441\u043b\u0430\u0432", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u041a\u0443\u0440\u044f\u043a\u0438\u043d", "world_code": null, "year": 2009}, {"bib": 219, "birth_date": "2008-01-01", "card_number": 2086706, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "a8094292-4c43-4f65-80ad-4829413ffddc", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0420\u043e\u043c\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0428\u0435\u0440\u0435\u0434\u0438\u043d", "world_code": null, "year": 2008}, {"bib": 220, "birth_date": "2009-01-01", "card_number": 2125815, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "5ae7edd6-0288-42a6-b427-a0314416910f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0420\u043e\u043c\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0423\u0441\u043e\u043b\u044c\u0446\u0435\u0432", "world_code": null, "year": 2009}, {"bib": 221, "birth_date": "2008-01-01", "card_number": 2125816, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "11d7b293-141c-443a-b279-5768e90b0044", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0411\u043e\u0440\u0438\u0441", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0421\u0430\u043a\u0443\u043b\u0438\u043d", "world_code": null, "year": 2008}, {"bib": 222, "birth_date": "2010-01-01", "card_number": 8031939, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "441b7d04-4992-451e-9fbf-1401cff8e136", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0432\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u041b\u0435\u0431\u0435\u0434\u0435\u0432", "world_code": null, "year": 2010}, {"bib": 223, "birth_date": "2009-01-01", "card_number": 8182054, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "c8e6e027-e6c9-47d8-8374-88544c50242f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0428\u0443\u0432\u0430\u043b\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 224, "birth_date": "2009-01-01", "card_number": 8269045, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "8b572a51-e574-4f7c-8e08-b24ab55d45da", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u043d\u0438\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0415\u043c\u0435\u043b\u0438\u043d", "world_code": null, "year": 2009}, {"bib": 225, "birth_date": "2009-01-01", "card_number": 1001648, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "9d17e7b4-775a-48f7-b5c9-d54bd9605c4f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0414\u043e\u043a\u0443\u0447\u0430\u0435\u0432", "world_code": null, "year": 2009}, {"bib": 226, "birth_date": "2009-01-01", "card_number": 1421667, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "33d7fd11-a499-4f1e-a0e7-4031e8e1f7a0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u043b\u0435\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0413\u043e\u0440\u043e\u0434\u043d\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 227, "birth_date": "2008-01-01", "card_number": 2125811, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "209d4090-92dc-441b-88b2-cff37cc42292", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0422\u0438\u043c\u043e\u0444\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u0413\u043e\u0440\u0438\u043d", "world_code": null, "year": 2008}, {"bib": 228, "birth_date": "2010-01-01", "card_number": 8031931, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "ca4de6c6-0a92-4f1d-ba41-b32f672ce52f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0442\u0451\u043c", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 1, "sex": 0, "start_group": 4, "start_time": 39600000, "surname": "\u041d\u0430\u0434\u0451\u0436\u043a\u0438\u043d", "world_code": null, "year": 2010}, {"bib": 229, "birth_date": "2008-01-01", "card_number": 817039, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "705744bb-35cd-4217-b3f1-1858b227bb80", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0434\u0440\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 2, "sex": 0, "start_group": 5, "start_time": 39600000, "surname": "\u0428\u0438\u0448\u043a\u0438\u043d", "world_code": null, "year": 2008}, {"bib": 230, "birth_date": "2009-01-01", "card_number": 254763, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "c563b572-2720-4f94-91a0-7e6241871b75", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u043a", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 2, "sex": 0, "start_group": 5, "start_time": 39600000, "surname": "\u0428\u0443\u043b\u044c\u0436\u0435\u043d\u043a\u043e", "world_code": null, "year": 2009}, {"bib": 231, "birth_date": "2009-01-01", "card_number": 2082103, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "a7353a6b-7822-40c0-ae2f-4e0f9f7d7a3f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0442\u0435\u043f\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 2, "sex": 0, "start_group": 5, "start_time": 39600000, "surname": "\u0421\u043e\u043b\u043e\u0434\u043a\u0438\u0439", "world_code": null, "year": 2009}, {"bib": 232, "birth_date": "2009-01-01", "card_number": 2008484, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "b9b5cf8e-827b-4f0c-ad67-3c2ee00a96ce", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u0434\u0438\u043c", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 3, "sex": 0, "start_group": 6, "start_time": 39600000, "surname": "\u041a\u043e\u043b\u0435\u0441\u043d\u0438\u043a\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 233, "birth_date": "2009-01-01", "card_number": 2125818, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "479261d5-13cb-4291-b8cb-1abc113852d1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0434\u0440\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 3, "sex": 0, "start_group": 6, "start_time": 39600000, "surname": "\u0411\u043e\u043b\u044c\u0448\u0430\u043a\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 234, "birth_date": "2009-01-01", "card_number": 254280, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "09959e24-b134-43f6-95ec-858b27c3cd46", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0438\u0445\u0430\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 6, "start_time": 39600000, "surname": "\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 235, "birth_date": "2009-01-01", "card_number": 333252, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15d857d7-d992-44e1-a851-0436cca15c80", "id": "9b184b2c-458b-4503-aa9e-5381246bd5bc", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0422\u0438\u043c\u0443\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 0, "sex": 0, "start_group": 0, "start_time": 39600000, "surname": "\u041a\u0443\u0440\u0431\u0430\u043a\u043e\u0432", "world_code": null, "year": 2009}, {"bib": 251, "birth_date": "2009-01-01", "card_number": 8122929, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "efa4b464-87d8-4fb4-9a3e-634bbf82f548", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39840000, "surname": "\u0412\u0435\u0441\u0435\u043d\u043a\u043e", "world_code": null, "year": 2009}, {"bib": 252, "birth_date": "2008-01-01", "card_number": 8275051, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "2b9c9549-9bd2-4865-baf8-e1ea58b594f6", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39840000, "surname": "\u0414\u043e\u0431\u0440\u044b\u043d\u0441\u043a\u0430\u044f", "world_code": null, "year": 2008}, {"bib": 253, "birth_date": "2008-01-01", "card_number": 8372130, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "8299fb22-3eed-4862-a933-3791e828edc2", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39840000, "surname": "\u0411\u043e\u0440\u0438\u0441\u043e\u0432\u0430", "world_code": null, "year": 2008}, {"bib": 254, "birth_date": "2009-01-01", "card_number": 8518371, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "4b973902-a77e-4db8-87c3-c89b5edd00a4", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39840000, "surname": "\u0411\u0435\u043b\u044f\u0432\u0438\u043d\u0430", "world_code": null, "year": 2009}, {"bib": 255, "birth_date": "2008-01-01", "card_number": 8269261, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "1a5c4d68-4e17-4607-9c6a-2f1a38fc3467", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0435\u0440\u043e\u043d\u0438\u043a\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 4, "sex": 0, "start_group": 1, "start_time": 39840000, "surname": "\u041f\u043e\u043b\u0443\u0448\u0442\u0430\u0439\u0446\u0435\u0432\u0430", "world_code": null, "year": 2008}, {"bib": 256, "birth_date": "2009-01-01", "card_number": 8666198, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "26d52a23-01ce-4c13-ae27-ee0e13c74b4d", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u043b\u0435\u0440\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 5, "sex": 0, "start_group": 2, "start_time": 39840000, "surname": "\u0422\u0435\u0440\u0435\u043d\u0442\u044c\u0435\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 257, "birth_date": "2008-01-01", "card_number": 8182082, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "dce49897-9aa3-4f70-93af-34c7c210361e", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 5, "sex": 0, "start_group": 2, "start_time": 39840000, "surname": "\u041f\u0440\u0438\u043b\u0443\u0446\u043a\u0430\u044f", "world_code": null, "year": 2008}, {"bib": 258, "birth_date": "2008-01-01", "card_number": 8275009, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "dd26479e-eac9-4e0e-a855-04958c374593", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0433\u0435\u043b\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 5, "sex": 0, "start_group": 2, "start_time": 39840000, "surname": "\u0412\u043e\u0440\u043e\u0442\u0438\u043b\u043e\u0432\u0430", "world_code": null, "year": 2008}, {"bib": 259, "birth_date": "2008-01-01", "card_number": 8275299, "comment": "?? 300", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "00a23bde-d15a-4399-85c2-4489307ef5e1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041f\u043e\u043b\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 1, "sex": 0, "start_group": 3, "start_time": 39840000, "surname": "\u0417\u0438\u043d\u0433\u0435\u0440", "world_code": null, "year": 2008}, {"bib": 260, "birth_date": "2009-01-01", "card_number": 8275006, "comment": "?? 200", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "a4638762-2cd3-4356-9adf-8895e520d931", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043b\u0435\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 1, "sex": 0, "start_group": 3, "start_time": 39840000, "surname": "\u0421\u043e\u043b\u043e\u0432\u044c\u0435\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 261, "birth_date": "2008-01-01", "card_number": 8010208, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "f54afd42-987a-4ce5-aab4-edf1c71eb949", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 3, "start_time": 39840000, "surname": "\u0420\u044b\u0436\u043e\u0432\u0430", "world_code": null, "year": 2008}, {"bib": 262, "birth_date": "2009-01-01", "card_number": 254161, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "f7ac8331-5ad7-400f-8448-6682ffdbe8de", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041b\u0430\u0434\u0430", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 1, "sex": 0, "start_group": 3, "start_time": 39840000, "surname": "\u0411\u043e\u0440\u0438\u0441\u043e\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 263, "birth_date": "2009-01-01", "card_number": 254786, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "914c6a15-5d47-4132-9c42-c9b014ab7ef9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0438\u0430\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 2, "sex": 0, "start_group": 4, "start_time": 39840000, "surname": "\u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d\u043e\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 264, "birth_date": "2009-01-01", "card_number": 2149290, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "7150dff8-6929-4d7e-845d-cc092b7907f1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u0440\u0432\u0430\u0440\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 2, "sex": 0, "start_group": 4, "start_time": 39840000, "surname": "\u041b\u0438\u043f\u0430\u0442\u043e\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 265, "birth_date": "2009-01-01", "card_number": 1005665, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "763fcef9-5cf7-4aa9-b935-2468552ec77f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 2, "sex": 0, "start_group": 4, "start_time": 39840000, "surname": "\u041a\u043e\u0440\u0441\u0438\u043a\u043e\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 266, "birth_date": "2009-01-01", "card_number": 2131855, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "697f22d3-7d33-4db8-a72c-d7a17bf2ba37", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 2, "sex": 0, "start_group": 4, "start_time": 39840000, "surname": "\u041a\u0443\u0440\u043e\u0447\u043a\u0438\u043d\u0430", "world_code": null, "year": 2009}, {"bib": 267, "birth_date": "2009-01-01", "card_number": 2040210, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "98630355-0844-4337-921c-afc53d21f055", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041b\u044e\u0431\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 5, "start_time": 39840000, "surname": "\u0428\u0435\u0440\u0441\u0442\u043e\u0431\u043e\u0435\u0432\u0430", "world_code": null, "year": 2009}, {"bib": 268, "birth_date": "2009-01-01", "card_number": 254303, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "7816c476-5f9c-4b71-825f-7ffe3a889646", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u0440\u044c\u044f", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 3, "sex": 0, "start_group": 5, "start_time": 39840000, "surname": "\u041a\u043e\u043c\u0430\u0440\u043e\u0432\u0441\u043a\u0430\u044f", "world_code": null, "year": 2009}, {"bib": 269, "birth_date": "2008-01-01", "card_number": 2008492, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "15c2bedf-f53a-4b3c-9bc5-3634a02ebb63", "id": "e2841f85-a88e-433c-bdeb-a7eb4ff0495b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 5, "start_time": 39840000, "surname": "\u041c\u044b\u0441\u0438\u043d\u0430", "world_code": null, "year": 2008}, {"bib": 301, "birth_date": "2010-01-01", "card_number": 2135130, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "80df6180-4472-41d5-93e1-12a073de7ec1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u0428\u0438\u0448\u043a\u0438\u043d", "world_code": null, "year": 2010}, {"bib": 302, "birth_date": "2010-01-01", "card_number": 8275297, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "709798bc-039f-485b-93bf-4eea24fa60a5", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0442\u0432\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u041b\u0435\u0431\u0435\u0434\u0435\u0432", "world_code": null, "year": 2010}, {"bib": 303, "birth_date": "2010-01-01", "card_number": 8031914, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "51206760-2c96-427c-9c9f-3bd0488db71a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u041c\u0430\u043a\u0430\u0440\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 304, "birth_date": "2010-01-01", "card_number": 8122864, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "74fcefd5-90d1-4841-9411-2827f253028d", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u041c\u0435\u043d\u043a\u0438\u043d", "world_code": null, "year": 2010}, {"bib": 305, "birth_date": "2010-01-01", "card_number": 8498490, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "c422800e-b7ef-41f9-bc11-4c00d4b28a78", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u041f\u0435\u0440\u0435\u043f\u0435\u043b\u043a\u0438\u043d", "world_code": null, "year": 2010}, {"bib": 306, "birth_date": "2010-01-01", "card_number": 8031913, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "e96abfb8-670e-4e1a-875f-51c66384bad9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0442\u0451\u043c", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u0421\u0430\u0444\u043e\u043d\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 307, "birth_date": "2010-01-01", "card_number": 8275287, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "f38a75c6-075e-4476-a7f7-7d07fb059ea5", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0438\u0445\u0430\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u0421\u044b\u0447\u0435\u0432", "world_code": null, "year": 2010}, {"bib": 308, "birth_date": "2010-01-01", "card_number": 2146129, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "cac03795-a929-4658-a3e8-f50dab1ed0f2", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0441\u0435\u043d\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 1, "sex": 0, "start_group": 1, "start_time": 40140000, "surname": "\u041a\u0443\u043b\u044c\u043a\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 309, "birth_date": "2010-01-01", "card_number": 2224680, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "3a81d675-8a03-4246-91f0-ba2a7a4096b4", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0432\u0433\u0435\u043d\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 2, "sex": 0, "start_group": 2, "start_time": 40140000, "surname": "\u0411\u0443\u043b\u0433\u0430\u043d\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 310, "birth_date": "2010-01-01", "card_number": 8089646, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "83bda7b1-e41d-46f4-b719-3d95d3b18b72", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0433\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "2426d984-3699-4df9-a051-bdac8320cadb", "qual": 2, "sex": 0, "start_group": 2, "start_time": 40140000, "surname": "\u0414\u044e\u0434\u0438\u043d", "world_code": null, "year": 2010}, {"bib": 311, "birth_date": "2011-01-01", "card_number": 2224723, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "85396e53-ab52-4f98-8489-041d93de4e5f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0442\u0430\u043d\u0438\u0441\u043b\u0430\u0432", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 2, "sex": 0, "start_group": 2, "start_time": 40140000, "surname": "\u0420\u0430\u0431\u043e\u0441\u0438\u043d", "world_code": null, "year": 2011}, {"bib": 312, "birth_date": "2010-01-01", "card_number": 254264, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "73c688a0-9212-44df-a1b8-398dd1970c11", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041b\u0435\u043e\u043d\u0438\u0434", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 2, "sex": 0, "start_group": 2, "start_time": 40140000, "surname": "\u0420\u0443\u0431\u0438\u043d\u0448\u0442\u0435\u0439\u043d", "world_code": null, "year": 2010}, {"bib": 313, "birth_date": "2010-01-01", "card_number": 2224679, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "f12c907a-3a80-4844-94d1-86e8202ed036", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u043b\u0438\u043c", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 2, "sex": 0, "start_group": 2, "start_time": 40140000, "surname": "\u0422\u0443\u043c\u0430\u043d\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 314, "birth_date": "2010-01-01", "card_number": 2443938, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "41e06b64-01de-404f-a207-6eb0370f4415", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u0438\u0440\u0438\u043b\u043b", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 2, "sex": 0, "start_group": 2, "start_time": 40140000, "surname": "\u0424\u0440\u043e\u043b\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 315, "birth_date": "2010-01-01", "card_number": 237387, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "79eebc84-3dbf-45da-9374-d7f994adbca1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042f\u043d", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u041f\u0435\u0440\u0435\u043b\u044c\u043c\u0430\u043d", "world_code": null, "year": 2010}, {"bib": 316, "birth_date": "2010-01-01", "card_number": 2005600, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "a7fc353d-b0d7-441e-8602-0d59ea9c521e", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0441\u0435\u043d\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0413\u0430\u0440\u0438\u0444\u0443\u043b\u043b\u0438\u043d", "world_code": null, "year": 2010}, {"bib": 317, "birth_date": "2010-01-01", "card_number": 2008495, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "68803a71-0b0f-4921-8c3a-5569e41dc296", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0434\u0440\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0412\u0430\u043b\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 318, "birth_date": "2011-01-01", "card_number": 8182076, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "1a27eed7-25cb-47ac-8648-adbf6d2005ec", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0438\u0445\u0430\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0412\u0435\u0441\u0435\u043d\u043a\u043e", "world_code": null, "year": 2011}, {"bib": 319, "birth_date": "2010-01-01", "card_number": 1006879, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "096a5d69-35e2-4e08-9849-112006180306", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0433\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0412\u043e\u043b\u043a\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 320, "birth_date": "2010-01-01", "card_number": 1410318, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "708820a5-5df2-4358-a8ea-44c282103dd9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0438\u043a\u0442\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0413\u0430\u0440\u0435\u0435\u0432", "world_code": null, "year": 2010}, {"bib": 321, "birth_date": "2010-01-01", "card_number": 8372126, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "8ba84584-1fd9-4842-846c-6cbb1c5de2aa", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0422\u0438\u043c\u0443\u0440", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0411\u0438\u043a\u0442\u044f\u043a\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 322, "birth_date": "2012-01-01", "card_number": 6304685, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "11552255-639b-474d-b49d-99a021326112", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0413\u0443\u0441\u0435\u0432", "world_code": null, "year": 2012}, {"bib": 323, "birth_date": "2010-01-01", "card_number": 2224654, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "a5efa112-002e-434f-aaab-75e1298ad998", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0434\u0440\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0413\u0443\u0441\u0435\u0432", "world_code": null, "year": 2010}, {"bib": 324, "birth_date": "2011-01-01", "card_number": 2127082, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "f7b781e4-bf9b-40ff-8e2c-19dacf336b53", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0441\u0435\u043d\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u041c\u0430\u043a\u0430\u0440\u044b\u0447\u0435\u0432", "world_code": null, "year": 2011}, {"bib": 325, "birth_date": "2011-01-01", "card_number": 1421696, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "fa058e12-de60-46c8-9073-db7ad7991da4", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u041d\u0435\u0441\u0442\u0435\u0440\u0435\u043d\u043a\u043e", "world_code": null, "year": 2011}, {"bib": 326, "birth_date": "2011-01-01", "card_number": 2443948, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "82498a5a-23ae-4f27-a6e6-66c648091d05", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u0440\u0442\u0443\u0440", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 3, "start_time": 40140000, "surname": "\u0421\u0430\u0440\u043c\u0430\u043d\u043e\u0432", "world_code": null, "year": 2011}, {"bib": 327, "birth_date": "2011-01-01", "card_number": 2081530, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "29306a9d-9a3c-4bbd-b996-35b998ef4b45", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u043b\u0430\u0432\u0430", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0410\u0432\u0434\u0435\u0435\u0432", "world_code": null, "year": 2011}, {"bib": 328, "birth_date": "2011-01-01", "card_number": 2149333, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "16582852-539d-4cb2-9ba8-fd3872bcac8e", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0410\u043d\u0438\u043a\u0438\u043d", "world_code": null, "year": 2011}, {"bib": 329, "birth_date": "2012-01-01", "card_number": 8681423, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "2afbb525-333c-43ef-9930-8a1fe27ad0a3", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u041f\u043e\u0437\u0434\u0435\u0435\u0432", "world_code": null, "year": 2012}, {"bib": 330, "birth_date": "2011-01-01", "card_number": 333189, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "cf0c11f8-1503-41c0-92c4-bf5d7c36b337", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0434\u0440\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0429\u0435\u043f\u0430\u043b\u0438\u043d", "world_code": null, "year": 2011}, {"bib": 331, "birth_date": "2014-01-01", "card_number": 237372, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "40c24ee3-ebf3-482f-9c6b-0336313bba73", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0442\u043e\u043d", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0420\u0435\u0434\u043d\u0435\u0432", "world_code": null, "year": 2014}, {"bib": 332, "birth_date": "2012-01-01", "card_number": 8275003, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "3a77827a-0b29-4806-bbab-f3f9d1f3a3f4", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0427\u0435\u0440\u043d\u044b\u0448\u043e\u0432", "world_code": null, "year": 2012}, {"bib": 333, "birth_date": "2012-01-01", "card_number": 1410311, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "2bebfe04-3bb0-4270-87d7-3b8e70cb9f9d", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0438\u043a\u0442\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0424\u0438\u043b\u0430\u0442\u043e\u0432", "world_code": null, "year": 2012}, {"bib": 334, "birth_date": "2014-01-01", "card_number": 2040208, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "5dca45b9-7791-4d88-9867-1f31b4de3455", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0421\u0442\u0435\u043f\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0421\u0435\u0440\u0433\u0435\u0435\u0432", "world_code": null, "year": 2014}, {"bib": 335, "birth_date": "2010-01-01", "card_number": 1421656, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "f8b6716c-b63f-4dab-a358-0d5ad4f5eb39", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0420\u044b\u0431\u0430\u043a\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 336, "birth_date": "2013-01-01", "card_number": 6304693, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "db7fd4c7-77d7-4868-b110-e9eb67bc9de8", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0432\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0428\u0438\u043c\u043e\u043d\u043e\u0432", "world_code": null, "year": 2013}, {"bib": 337, "birth_date": "2011-01-01", "card_number": 1421641, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "60024151-2cc0-45ad-8a87-526d79ef7f14", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0410\u0432\u0435\u0440\u044c\u044f\u043d\u043e\u0432", "world_code": null, "year": 2011}, {"bib": 338, "birth_date": "2010-01-01", "card_number": 0, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "cf405460-abbf-4ee1-86b5-1a09923545a8", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0442\u0432\u0435\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u041a\u043e\u0437\u043b\u043e\u0432", "world_code": null, "year": 2010}, {"bib": 339, "birth_date": "2010-01-01", "card_number": 1005669, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "2cc18187-b7bb-4cfd-8ed7-08e7e54fbbd3", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u043b\u044c\u044f", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0414\u043e\u0446\u0435\u043d\u043a\u043e", "world_code": null, "year": 2010}, {"bib": 340, "birth_date": "2011-01-01", "card_number": 6304699, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "137f1e22-f989-4750-8e95-ed68d438cd97", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0438\u043a\u0442\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0413\u0440\u0430\u0445\u043e\u0432", "world_code": null, "year": 2011}, {"bib": 341, "birth_date": "2013-01-01", "card_number": 0, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "ab614e89-da29-4e04-ae04-8d9e10b97a7b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u043d\u0438\u0438\u043b", "national_code": null, "object": "Person", "organization_id": "876337d9-b7d7-4100-a294-815587c97a9a", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0413\u043b\u0430\u0437\u044b\u0440\u0438\u043d", "world_code": null, "year": 2013}, {"bib": 342, "birth_date": "2013-01-01", "card_number": 2092036, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "871d32b5-1910-451e-ae58-a5e828e24f5e", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0411\u0435\u043b\u044f\u0435\u0432\u0441\u043a\u0438\u0439", "world_code": null, "year": 2013}, {"bib": 343, "birth_date": "2013-01-01", "card_number": 1450003, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "7e7c3105-93a2-46a9-9bce-bdb36909fc7c", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041f\u0430\u0432\u0435\u043b", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0411\u0435\u043b\u044f\u0432\u0438\u043d", "world_code": null, "year": 2013}, {"bib": 344, "birth_date": "2012-01-01", "card_number": 0, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "8ad45511-d0df-404d-b758-5c13f91d1553", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0424\u0435\u0434\u043e\u0440", "national_code": null, "object": "Person", "organization_id": "7ff96672-bd5e-4dfe-aa26-6b339b805c62", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u041a\u043e\u043d\u0434\u0440\u0430\u0448\u043a\u0438\u043d", "world_code": null, "year": 2012}, {"bib": 345, "birth_date": "2012-01-01", "card_number": 8372121, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "66560b86-995b-4786-9114-0fac2a80becc", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0420\u043e\u043c\u0430\u043d", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0410\u0431\u0430\u043a\u0443\u043c\u043e\u0432", "world_code": null, "year": 2012}, {"bib": 346, "birth_date": "2011-01-01", "card_number": 8372141, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "736855c6-f397-4a41-b6c0-9b59067997a2", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0413\u043b\u0435\u0431", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u041a\u0443\u0440\u043d\u043e\u0432", "world_code": null, "year": 2011}, {"bib": 347, "birth_date": "2013-01-01", "card_number": 1418952, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "24745ec0-62c2-4fd7-b115-298a2c171f91", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0438\u043a\u0438\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u041a\u043e\u0437\u043b\u043e\u0432", "world_code": null, "year": 2013}, {"bib": 348, "birth_date": "2012-01-01", "card_number": 1412545, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "e41e8538-a393-41cf-83b2-056688fdcd43", "id": "95e9cb66-333f-44ad-adec-2f9ab0d94f5d", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 4, "start_time": 40140000, "surname": "\u0411\u0435\u043b\u043e\u0432", "world_code": null, "year": 2012}, {"bib": 401, "birth_date": "2010-01-01", "card_number": 2224724, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "0b023ac8-d624-459b-be03-9500bd0d806a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 1, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0413\u0430\u0440\u043a\u0443\u0448\u0430", "world_code": null, "year": 2010}, {"bib": 402, "birth_date": "2010-01-01", "card_number": 8681431, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "281ed951-c655-4720-a0af-e26fd8e1547f", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0415\u0440\u0435\u043c\u0438\u043d\u0430", "world_code": null, "year": 2010}, {"bib": 403, "birth_date": "2010-01-01", "card_number": 2101047, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "52801a21-73ca-4f33-832e-f09f6af7055b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0422\u0430\u0442\u044c\u044f\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 1, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041f\u0430\u043d\u043a\u0440\u0430\u0442\u043e\u0432\u0430", "world_code": null, "year": 2010}, {"bib": 404, "birth_date": "2010-01-01", "card_number": 2092037, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "12c70497-7e18-4544-a90d-006ec1ac92b1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0435\u043b\u0430\u043d\u044c\u044f", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 2, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041c\u0435\u0434\u0432\u0435\u0434\u0435\u0432\u0430", "world_code": null, "year": 2010}, {"bib": 405, "birth_date": "2011-01-01", "card_number": 8031910, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "260ace9b-dcd2-4e8c-8ca6-aa49d0fccc8a", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041e\u043b\u044c\u0433\u0430", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 2, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041b\u043e\u043a\u043e\u0442\u043d\u0438\u043a\u043e\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 406, "birth_date": "2010-01-01", "card_number": 8031933, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "a3f99185-4d7d-4be2-b5d3-276542b01366", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041a\u0441\u0435\u043d\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 2, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041a\u043e\u0437\u043b\u043e\u0432\u0430", "world_code": null, "year": 2010}, {"bib": 407, "birth_date": "2011-01-01", "card_number": 1302263, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "21138912-6adc-4aba-b5e3-6137bff22fb3", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042d\u043b\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 2, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0411\u0430\u0440\u0430\u043d\u043e\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 408, "birth_date": "2013-01-01", "card_number": 2443936, "comment": "??", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "eec3fd1f-2189-4c0e-b452-eec643fdaea1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043b\u0435\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041a\u0430\u0437\u0430\u0447\u0435\u043a", "world_code": null, "year": 2013}, {"bib": 409, "birth_date": "2011-01-01", "card_number": 2260092, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "b7c26632-20cb-464b-82fd-5de39be1a8fd", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0412\u0430\u0441\u0438\u043b\u0438\u0441\u0430", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0414\u0438\u043a\u0430\u0440\u0435\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 410, "birth_date": "2011-01-01", "card_number": 2130284, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "4b498a79-f255-40ca-99b9-855b8193b2a1", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 3, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041f\u0430\u043d\u044c\u043a\u0438\u043d\u0430", "world_code": null, "year": 2011}, {"bib": 411, "birth_date": "2011-01-01", "card_number": 4637799, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "8e752662-9c92-4077-b2f2-d97b5eccc649", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041b\u044e\u0431\u043e\u0432\u044c", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 3, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041d\u0430\u0436\u0438\u043c\u043e\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 412, "birth_date": "2011-01-01", "card_number": 2138695, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "05d18d61-0990-4f1e-85d6-6aa51e202ee0", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430", "national_code": null, "object": "Person", "organization_id": "148c9850-0f2e-4b92-af4b-a72075faaf04", "qual": 3, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0421\u043e\u0440\u043e\u043a\u0438\u043d\u0430", "world_code": null, "year": 2011}, {"bib": 413, "birth_date": "2011-01-01", "card_number": 1403813, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "07f4969e-b429-4a0c-b8f0-dab4252f4841", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "080c54b4-71c6-4916-8ddd-49c6d05b8e5a", "qual": 3, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041a\u0430\u043b\u0438\u043a\u0438\u043d\u0430", "world_code": null, "year": 2011}, {"bib": 414, "birth_date": "2012-01-01", "card_number": 2082102, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "2b8d8b1c-e80b-4f9c-9ff8-bbf20007feb7", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "ad4ae3d0-a683-481d-b2c2-719e12cab455", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0413\u0430\u0440\u0435\u0435\u0432\u0430", "world_code": null, "year": 2012}, {"bib": 415, "birth_date": "2013-01-01", "card_number": 2082107, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "a4879f40-2a7b-4676-9b96-63c8a2c03089", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u0440\u044c\u044f", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0413\u043e\u043c\u0443\u043b\u0438\u043d\u0430", "world_code": null, "year": 2013}, {"bib": 416, "birth_date": "2013-01-01", "card_number": 237354, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "181c1914-41cc-4c6d-a8a4-53865eb06700", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0417\u0430\u043c\u044f\u0442\u0438\u043d\u0430", "world_code": null, "year": 2013}, {"bib": 417, "birth_date": "2012-01-01", "card_number": 2181085, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "300a81e5-635a-4262-8b18-5de7d5f46f8b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0417\u0435\u0440\u0438\u043d\u0430", "world_code": null, "year": 2012}, {"bib": 418, "birth_date": "2011-01-01", "card_number": 1097597, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "4266e5e1-ae37-4055-beb7-1bfb21db74b9", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0414\u0430\u0440\u044c\u044f", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041a\u0430\u043b\u043c\u044b\u043a\u043e\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 419, "birth_date": "2011-01-01", "card_number": 8681429, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "82a15b0a-3618-4cf1-aaae-e1201ff9f1d6", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0417\u043b\u0430\u0442\u0430", "national_code": null, "object": "Person", "organization_id": "31267bbe-6332-4d28-81bf-053894eed3e0", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041a\u043e\u0432\u044b\u043b\u044f\u0435\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 420, "birth_date": "2011-01-01", "card_number": 1403814, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "20ebbfa1-2c7f-459a-8d07-c2c66c3d512d", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041c\u0430\u0440\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "00a65255-d01a-4bfc-baee-0a23b04da4b7", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0411\u0435\u043b\u044f\u0435\u0432\u0441\u043a\u0430\u044f", "world_code": null, "year": 2011}, {"bib": 421, "birth_date": "2011-01-01", "card_number": 237364, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "53671abd-99c6-4836-887c-98c913930fdc", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u043b\u0430", "national_code": null, "object": "Person", "organization_id": "a69991af-f23c-4237-96ed-16292b1c713d", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0411\u0443\u0440\u0435\u043d\u0435\u0432\u0430", "world_code": null, "year": 2011}, {"bib": 422, "birth_date": "2013-01-01", "card_number": 691027, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "769d1953-4e59-430d-84e3-a358cb3a7868", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0430\u0434\u0435\u0436\u0434\u0430", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0413\u0430\u0432\u0440\u0438\u043b\u043e\u0432\u0430", "world_code": null, "year": 2013}, {"bib": 423, "birth_date": "2013-01-01", "card_number": 4637715, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "8a3a50b6-9f6b-44f2-ad00-aeebf492804b", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041b\u044e\u0434\u043c\u0438\u043b\u0430", "national_code": null, "object": "Person", "organization_id": "dc391c16-79a9-4eb4-b3f3-27090ce5659a", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041d\u0430\u0436\u0438\u043c\u043e\u0432\u0430", "world_code": null, "year": 2013}, {"bib": 424, "birth_date": "2012-01-01", "card_number": 2101046, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "9f6fbd0b-567b-4f98-88b2-4ba6a9c52655", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u041d\u0430\u0442\u0430\u043b\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u041f\u0435\u0440\u0435\u043f\u0435\u043b\u043a\u0438\u043d\u0430", "world_code": null, "year": 2012}, {"bib": 425, "birth_date": "2012-01-01", "card_number": 254774, "comment": "\u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "22a99bdc-2eea-4f19-a762-bc41acf3263d", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0415\u0432\u0434\u043e\u043a\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "5427d407-3aec-496a-b77a-fcdbd3ba5592", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0421\u043c\u0435\u0442\u0430\u043d\u0438\u043d\u0430", "world_code": null, "year": 2012}, {"bib": 426, "birth_date": "2012-01-01", "card_number": 2142888, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "b250951e-150d-4405-bd38-ffe6ab2f8253", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u042e\u043b\u0438\u044f", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0421\u0443\u0445\u0430\u043d\u043e\u0432\u0430", "world_code": null, "year": 2012}, {"bib": 427, "birth_date": "2014-01-01", "card_number": 2125814, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "e87ead14-f4ed-40d4-ac79-77188eb96f01", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0418\u0440\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "96ecc810-dc40-460f-9130-816fb3966620", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0423\u0441\u043e\u043b\u044c\u0446\u0435\u0432\u0430", "world_code": null, "year": 2014}, {"bib": 428, "birth_date": "2013-01-01", "card_number": 1421670, "comment": "\u041e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u044b", "group_id": "4ed7a380-0415-42f9-a8ff-ce55c579a74c", "id": "67f73ae6-1c15-4a9b-b406-0f793d41fd37", "is_out_of_competition": false, "is_paid": false, "is_personal": false, "is_rented_card": false, "name": "\u0410\u043b\u044c\u0431\u0438\u043d\u0430", "national_code": null, "object": "Person", "organization_id": "a35974fb-a16e-4b1d-8ac0-6be15b58707e", "qual": 0, "sex": 0, "start_group": 0, "start_time": 40380000, "surname": "\u0429\u0435\u043f\u0430\u043b\u0438\u043d\u0430", "world_code": null, "year": 2013}], "results": [], "settings": {"is_corridor_minute_number": false, "is_corridor_order_number": false, "is_fixed_number_interval": true, "is_fixed_start_interval": true, "is_mix_groups": false, "is_split_regions": false, "is_split_start_groups": false, "is_split_teams": false, "is_start_preparation_draw": false, "is_start_preparation_numbers": false, "is_start_preparation_reserve": false, "is_start_preparation_time": false, "numbers_first": 1, "numbers_interval": 1, "reserve_count": 1, "reserve_percent": 0, "reserve_prefix": "_\u0420\u0435\u0437\u0435\u0440\u0432", "start_first_time": 60000, "start_interval": 60000, "system_zero_time": [10, 34, 0]}};
+    racePreparation(race);
+
+    function getStartListByGroup(group) {
+        var isRelay = group.__type ? group.__type === 3 : race.data.race_type === 3;
+        var results = [];
+        for (var _i = 0, _a = race.persons; _i < _a.length; _i++) {
+            var person = _a[_i];
+            if (person.group && person.group.id === group.id) {
+                results.push({
+                    index: 0,
+                    name: person.surname + ' ' + person.name,
+                    org: (person.organization && String(person.organization.name).slice(0, MAX_ORG_NAME)) || '',
+                    qual: Qualification[person.qual],
+                    bib: person.bib,
+                    card_number: person.card_number,
+                    year: person.birth_date ? (new Date(person.birth_date)).getFullYear() : '',
+                    start: toHHMMSS(person.start_time),
+                    start_time: person.start_time
+                });
+            }
+        }
+        results.sort(function (a, b) {
+            if (isRelay && a.start_time === b.start_time) {
+                if (a.bib % 1000 === b.bib % 1000) {
+                    return ~~(a.bib / 1000) - ~~(b.bib / 1000)
+                } else {
+                    return a.bib % 1000 - b.bib % 1000
+                }
+            }
+            if (a.start_time === b.start_time) {
+                return a.bib - b.bib;
+            }
+            return a.start_time - b.start_time
+        });
+        var index = 0;
+        results.forEach(function (elem) {
+            index++;
+            elem.index = index
+        });
+        if (isRelay) {
+            index = 0;
+            var prevBib = 0;
+            var resultsList = results.slice();
+            results = [];
+            for (var _i = 0, resultsList_ = resultsList; _i < resultsList_.length; _i++) {
+                var r = resultsList_[_i];
+                r.index = '';
+                if (r.bib % 1000 !== prevBib) {
+                    index++;
+                    results.push({index: index});
+                    prevBib = r.bib % 1000;
+                }
+                results.push(r);
+            }
+        }
+        return results;
+    }
+
+    var Fields = {
+        fields: [
+            {key: 'index', title: '№', size: 4},
+            {key: 'name', title: 'Фамилия, имя', size: 30},
+            {key: 'org', title: 'Коллектив', size: 20},
+            {key: 'year', title: 'ГР', size: 5},
+            {key: 'qual', title: 'Разряд', size: 7},
+            {key: 'bib', title: 'Номер', size: 6},
+            {key: 'card_number', title: 'Номер чипа', size: 11},
+            {key: 'start', title: 'Время старта', size: 13}
+        ],
+        active: function (key, val) {
+            for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                var obj = _a[_i];
+                if (key === obj.key) {
+                    obj.active = val;
+                }
+            }
+        },
+        isActive: function (key) {
+            for (var _i = 0, _a = this.fields; _i < _a.length; _i++) {
+                var obj = _a[_i];
+                if (key === obj.key) {
+                    if (obj.active === void 0) {
+                        return true;
+                    }
+                    else {
+                        return !!obj.active;
+                    }
+                }
+            }
+            return false;
+        },
+        init: function () {
+            return this;
+        }
+    }.init();
+
+    var store = {};
+
+    function render() {
+        var resultBlock = document.getElementById('start-list-tables');
+        resultBlock.innerHTML = '';
+        for (var _i = 0, _a = race.groups; _i < _a.length; _i++) {
+            var group = _a[_i];
+            var titleBlock = document.createElement('h2');
+            titleBlock.id = group.name;
+            titleBlock.appendChild(document.createTextNode(group.name));
+            resultBlock.appendChild(titleBlock);
+            resultBlock.appendChild(getGroupsBlockElement(race));
+            if (store.tableView) {
+                resultBlock.appendChild(new TableGenerator(getStartListByGroup(group), Fields.fields).getTable({className: 'sportorg-table'}));
+            } else {
+                resultBlock.appendChild(new TableTextGenerator(getStartListByGroup(group), Fields.fields).getTable());
+            }
+        }
+    }
+    render();
+
+    var Scrolling = {
+        direction: 1,
+        enabled: false,
+        lock: false,
+        prev: 0,
+        intervalTimer: 0,
+        init: function () {
+            var _this = this;
+            if (_this.intervalTimer) {
+                clearInterval(_this.intervalTimer)
+            }
+            _this.intervalTimer = setInterval(function () {
+                _this.lock = !_this.lock;
+            }, 5000);
+            window.onscroll = function () {
+                var d = document.documentElement;
+                var offset = d.scrollTop + window.innerHeight;
+                var height = d.offsetHeight;
+
+                if (offset === height) {
+                    _this.direction = -1;
+                }
+                if (offset <= window.innerHeight) {
+                    _this.direction = 1;
+                }
+            };
+            this.pageScroll();
+            return this;
+        },
+        pageScroll: function () {
+            var _this = this;
+            if (_this.enabled && ! _this.lock) {
+                window.scrollBy(10, _this.direction);
+            }
+            setTimeout(function () {
+                _this.pageScroll();
+            }, 10);
+        }
+    }.init();
+
+    new SettingsGenerator([
+        {
+            title: 'Табличный вид',
+            value: !!store.tableView,
+            change: function (checked) {
+                store.tableView = checked;
+                render()
+            }
+        },
+        {
+            title: 'Номер',
+            value: Fields.isActive('bib'),
+            change: function (checked) {
+                Fields.active('bib', checked);
+                render()
+            }
+        },
+        {
+            title: 'Номер чипа',
+            value: Fields.isActive('card_number'),
+            change: function (checked) {
+                Fields.active('card_number', checked);
+                render()
+            }
+        },
+        {
+            title: 'Автоскролл',
+            value: Scrolling.enabled,
+            change: function (checked) {
+                Scrolling.enabled = checked;
+            }
+        },
+    ]).show();
+</script>
+
+</div>
+<div id="footer">
+    
+    <a href="http://www.sportorg.o-ural.ru">ПО SportOrg v1.5.0</a>
+    <script type="text/javascript">
+        var l = new Date();
+        document.write ('<span class="print-only">Время печати: ' + l.toLocaleString() + '</span>');
+    </script>
+    
+</div>
+</body>
+</html>
