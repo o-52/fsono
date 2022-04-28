@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="http://nakarte.me" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1">
+	<metadata>
+		<time>2022-04-27T20:17:52.373Z</time>
+	</metadata>
+	<wpt lat="56.380936" lon="43.729877">
+		<name>Судья</name>
+	</wpt>
+	<trk>
+		<name>дети. Funrun</name>
+		<trkseg>
+			<trkpt lat="56.387762" lon="43.736661"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.385466" lon="43.737927"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.383140" lon="43.739044"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.382280" lon="43.738203"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.381449" lon="43.736448"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.381238" lon="43.735137"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.380702" lon="43.733764"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.380466" lon="43.732240"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.380681" lon="43.729773"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.380831" lon="43.729193"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387182" lon="43.731768"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388598" lon="43.732519"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388706" lon="43.734687"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388663" lon="43.736360"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387890" lon="43.736618"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+		</trkseg>
+	</trk>
+</gpx>
