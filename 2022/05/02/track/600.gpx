@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="http://nakarte.me" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1">
+	<metadata>
+		<time>2022-04-27T20:17:57.965Z</time>
+	</metadata>
+	<trk>
+		<name>Дети до 8 лет</name>
+		<trkseg>
+			<trkpt lat="56.387526" lon="43.736704"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387354" lon="43.736038"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387032" lon="43.735287"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.386925" lon="43.734923"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.386989" lon="43.734751"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387547" lon="43.734386"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387847" lon="43.734322"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388255" lon="43.734493"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388663" lon="43.734880"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388620" lon="43.736296"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.388470" lon="43.736510"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+			<trkpt lat="56.387869" lon="43.736575"><time>1970-01-01T00:00:01.000Z</time></trkpt>
+		</trkseg>
+	</trk>
+</gpx>
