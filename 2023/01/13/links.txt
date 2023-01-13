@@ -1,0 +1,10 @@
+трансляции
+ЖЭ https://viewer.o-gps-center.ru/viewer/event/??
+МЭ https://viewer.o-gps-center.ru/viewer/event/??
+
+карты
+ЖЭ https://o-gps-center.ru/manage/maps/view/??
+МЭ https://o-gps-center.ru/manage/maps/view/??
+
+https://orgeo.ru/event/25121
+https://orgeo.ru/event/25123
