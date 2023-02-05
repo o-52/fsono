@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+creator="OCAD Версия 12.2.1" version="1.1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
+http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <link href="http://www.ocad.com">
+      <text>OCAD AG</text>
+    </link>
+    <time>2023-02-04T20:27:21</time>
+    <bounds maxlat="56.38573960" maxlon="43.74029549" minlat="56.37636095" minlon="43.70617677"/>
+  </metadata>
+
+  <wpt lat="56.38340971" lon="43.73785731" >
+    <name>С1</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37965047" lon="43.73693321" >
+    <name>31</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37802086" lon="43.72201647" >
+    <name>32</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37523331" lon="43.71079285" >
+    <name>33</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37237121" lon="43.70465874" >
+    <name>34</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37711179" lon="43.71449151" >
+    <name>35</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38152871" lon="43.73721927" >
+    <name>36</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37977704" lon="43.73400904" >
+    <name>37</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38220321" lon="43.71735057" >
+    <name>38</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37643782" lon="43.72194625" >
+    <name>39</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38102732" lon="43.73669536" >
+    <name>40</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37922249" lon="43.73496271" >
+    <name>41</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38358274" lon="43.72162322" >
+    <name>42</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37145520" lon="43.70634861" >
+    <name>43</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37354532" lon="43.71012223" >
+    <name>44</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38480394" lon="43.71803667" >
+    <name>45</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37737664" lon="43.72042399" >
+    <name>46</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37801492" lon="43.72093191" >
+    <name>47</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38441844" lon="43.72223295" >
+    <name>48</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38176873" lon="43.73472883" >
+    <name>49</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37822669" lon="43.70990681" >
+    <name>50</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37827566" lon="43.71544272" >
+    <name>51</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37786524" lon="43.70778843" >
+    <name>52</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38232135" lon="43.73491806" >
+    <name>53</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37657783" lon="43.71129968" >
+    <name>54</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37861757" lon="43.71489938" >
+    <name>55</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38711093" lon="43.72443091" >
+    <name>56</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38146090" lon="43.73838343" >
+    <name>57</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38750705" lon="43.72023838" >
+    <name>58</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37952298" lon="43.73300522" >
+    <name>59</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37544350" lon="43.70928929" >
+    <name>60</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38067175" lon="43.73498411" >
+    <name>61</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37265294" lon="43.70691686" >
+    <name>62</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38192253" lon="43.73883924" >
+    <name>63</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38196562" lon="43.73825321" >
+    <name>64</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38656729" lon="43.71909078" >
+    <name>65</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38265461" lon="43.72916775" >
+    <name>67</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37482131" lon="43.70704537" >
+    <name>69</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.37543941" lon="43.71404009" >
+    <name>70</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38467356" lon="43.72354175" >
+    <name>71</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38113126" lon="43.73094386" >
+    <name>72</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38373503" lon="43.73032115" >
+    <name>73</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38085995" lon="43.72696430" >
+    <name>74</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38536269" lon="43.73699836" >
+    <name>75</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38554021" lon="43.73758252" >
+    <name>76</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38603392" lon="43.73729579" >
+    <name>77</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38292481" lon="43.72057809" >
+    <name>78</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38620870" lon="43.73629974" >
+    <name>90</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.38585715" lon="43.73596205" >
+    <name>Ф1</name>
+    <cmt></cmt>
+  </wpt>
+  <trk>
+    <name> М-25 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38146090" lon="43.73838343" >
+        <name>57</name>
+      </trkpt>
+      <trkpt lat="56.37977704" lon="43.73400904" >
+        <name>37</name>
+      </trkpt>
+      <trkpt lat="56.37802086" lon="43.72201647" >
+        <name>32</name>
+      </trkpt>
+      <trkpt lat="56.37643782" lon="43.72194625" >
+        <name>39</name>
+      </trkpt>
+      <trkpt lat="56.37523331" lon="43.71079285" >
+        <name>33</name>
+      </trkpt>
+      <trkpt lat="56.37145520" lon="43.70634861" >
+        <name>43</name>
+      </trkpt>
+      <trkpt lat="56.37237121" lon="43.70465874" >
+        <name>34</name>
+      </trkpt>
+      <trkpt lat="56.37482131" lon="43.70704537" >
+        <name>69</name>
+      </trkpt>
+      <trkpt lat="56.37354532" lon="43.71012223" >
+        <name>44</name>
+      </trkpt>
+      <trkpt lat="56.37711179" lon="43.71449151" >
+        <name>35</name>
+      </trkpt>
+      <trkpt lat="56.37822669" lon="43.70990681" >
+        <name>50</name>
+      </trkpt>
+      <trkpt lat="56.37786524" lon="43.70778843" >
+        <name>52</name>
+      </trkpt>
+      <trkpt lat="56.37657783" lon="43.71129968" >
+        <name>54</name>
+      </trkpt>
+      <trkpt lat="56.37861757" lon="43.71489938" >
+        <name>55</name>
+      </trkpt>
+      <trkpt lat="56.38220321" lon="43.71735057" >
+        <name>38</name>
+      </trkpt>
+      <trkpt lat="56.38292481" lon="43.72057809" >
+        <name>78</name>
+      </trkpt>
+      <trkpt lat="56.38480394" lon="43.71803667" >
+        <name>45</name>
+      </trkpt>
+      <trkpt lat="56.38441844" lon="43.72223295" >
+        <name>48</name>
+      </trkpt>
+      <trkpt lat="56.38711093" lon="43.72443091" >
+        <name>56</name>
+      </trkpt>
+      <trkpt lat="56.38750705" lon="43.72023838" >
+        <name>58</name>
+      </trkpt>
+      <trkpt lat="56.38656729" lon="43.71909078" >
+        <name>65</name>
+      </trkpt>
+      <trkpt lat="56.38265461" lon="43.72916775" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.38176873" lon="43.73472883" >
+        <name>49</name>
+      </trkpt>
+      <trkpt lat="56.38603392" lon="43.73729579" >
+        <name>77</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> М-17 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38192253" lon="43.73883924" >
+        <name>63</name>
+      </trkpt>
+      <trkpt lat="56.38152871" lon="43.73721927" >
+        <name>36</name>
+      </trkpt>
+      <trkpt lat="56.37922249" lon="43.73496271" >
+        <name>41</name>
+      </trkpt>
+      <trkpt lat="56.37801492" lon="43.72093191" >
+        <name>47</name>
+      </trkpt>
+      <trkpt lat="56.37737664" lon="43.72042399" >
+        <name>46</name>
+      </trkpt>
+      <trkpt lat="56.37523331" lon="43.71079285" >
+        <name>33</name>
+      </trkpt>
+      <trkpt lat="56.37354532" lon="43.71012223" >
+        <name>44</name>
+      </trkpt>
+      <trkpt lat="56.37145520" lon="43.70634861" >
+        <name>43</name>
+      </trkpt>
+      <trkpt lat="56.37237121" lon="43.70465874" >
+        <name>34</name>
+      </trkpt>
+      <trkpt lat="56.37482131" lon="43.70704537" >
+        <name>69</name>
+      </trkpt>
+      <trkpt lat="56.37711179" lon="43.71449151" >
+        <name>35</name>
+      </trkpt>
+      <trkpt lat="56.37861757" lon="43.71489938" >
+        <name>55</name>
+      </trkpt>
+      <trkpt lat="56.38220321" lon="43.71735057" >
+        <name>38</name>
+      </trkpt>
+      <trkpt lat="56.38467356" lon="43.72354175" >
+        <name>71</name>
+      </trkpt>
+      <trkpt lat="56.38265461" lon="43.72916775" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.38176873" lon="43.73472883" >
+        <name>49</name>
+      </trkpt>
+      <trkpt lat="56.38554021" lon="43.73758252" >
+        <name>76</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> М-14 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38146090" lon="43.73838343" >
+        <name>57</name>
+      </trkpt>
+      <trkpt lat="56.38152871" lon="43.73721927" >
+        <name>36</name>
+      </trkpt>
+      <trkpt lat="56.37965047" lon="43.73693321" >
+        <name>31</name>
+      </trkpt>
+      <trkpt lat="56.37952298" lon="43.73300522" >
+        <name>59</name>
+      </trkpt>
+      <trkpt lat="56.37643782" lon="43.72194625" >
+        <name>39</name>
+      </trkpt>
+      <trkpt lat="56.37737664" lon="43.72042399" >
+        <name>46</name>
+      </trkpt>
+      <trkpt lat="56.37827566" lon="43.71544272" >
+        <name>51</name>
+      </trkpt>
+      <trkpt lat="56.38220321" lon="43.71735057" >
+        <name>38</name>
+      </trkpt>
+      <trkpt lat="56.38480394" lon="43.71803667" >
+        <name>45</name>
+      </trkpt>
+      <trkpt lat="56.38467356" lon="43.72354175" >
+        <name>71</name>
+      </trkpt>
+      <trkpt lat="56.38113126" lon="43.73094386" >
+        <name>72</name>
+      </trkpt>
+      <trkpt lat="56.38232135" lon="43.73491806" >
+        <name>53</name>
+      </trkpt>
+      <trkpt lat="56.38554021" lon="43.73758252" >
+        <name>76</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> М-12 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38196562" lon="43.73825321" >
+        <name>64</name>
+      </trkpt>
+      <trkpt lat="56.38067175" lon="43.73498411" >
+        <name>61</name>
+      </trkpt>
+      <trkpt lat="56.38113126" lon="43.73094386" >
+        <name>72</name>
+      </trkpt>
+      <trkpt lat="56.38265461" lon="43.72916775" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.38373503" lon="43.73032115" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.38536269" lon="43.73699836" >
+        <name>75</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ж-25 </name>
+    <trkseg>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38192253" lon="43.73883924" >
+        <name>63</name>
+      </trkpt>
+      <trkpt lat="56.38176873" lon="43.73472883" >
+        <name>49</name>
+      </trkpt>
+      <trkpt lat="56.37977704" lon="43.73400904" >
+        <name>37</name>
+      </trkpt>
+      <trkpt lat="56.37737664" lon="43.72042399" >
+        <name>46</name>
+      </trkpt>
+      <trkpt lat="56.37544350" lon="43.70928929" >
+        <name>60</name>
+      </trkpt>
+      <trkpt lat="56.37265294" lon="43.70691686" >
+        <name>62</name>
+      </trkpt>
+      <trkpt lat="56.37237121" lon="43.70465874" >
+        <name>34</name>
+      </trkpt>
+      <trkpt lat="56.37482131" lon="43.70704537" >
+        <name>69</name>
+      </trkpt>
+      <trkpt lat="56.37354532" lon="43.71012223" >
+        <name>44</name>
+      </trkpt>
+      <trkpt lat="56.37543941" lon="43.71404009" >
+        <name>70</name>
+      </trkpt>
+      <trkpt lat="56.37657783" lon="43.71129968" >
+        <name>54</name>
+      </trkpt>
+      <trkpt lat="56.37861757" lon="43.71489938" >
+        <name>55</name>
+      </trkpt>
+      <trkpt lat="56.38220321" lon="43.71735057" >
+        <name>38</name>
+      </trkpt>
+      <trkpt lat="56.38358274" lon="43.72162322" >
+        <name>42</name>
+      </trkpt>
+      <trkpt lat="56.38467356" lon="43.72354175" >
+        <name>71</name>
+      </trkpt>
+      <trkpt lat="56.38373503" lon="43.73032115" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.38232135" lon="43.73491806" >
+        <name>53</name>
+      </trkpt>
+      <trkpt lat="56.38603392" lon="43.73729579" >
+        <name>77</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ж-17 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38146090" lon="43.73838343" >
+        <name>57</name>
+      </trkpt>
+      <trkpt lat="56.37952298" lon="43.73300522" >
+        <name>59</name>
+      </trkpt>
+      <trkpt lat="56.37802086" lon="43.72201647" >
+        <name>32</name>
+      </trkpt>
+      <trkpt lat="56.37643782" lon="43.72194625" >
+        <name>39</name>
+      </trkpt>
+      <trkpt lat="56.37543941" lon="43.71404009" >
+        <name>70</name>
+      </trkpt>
+      <trkpt lat="56.37657783" lon="43.71129968" >
+        <name>54</name>
+      </trkpt>
+      <trkpt lat="56.37827566" lon="43.71544272" >
+        <name>51</name>
+      </trkpt>
+      <trkpt lat="56.38220321" lon="43.71735057" >
+        <name>38</name>
+      </trkpt>
+      <trkpt lat="56.38358274" lon="43.72162322" >
+        <name>42</name>
+      </trkpt>
+      <trkpt lat="56.38480394" lon="43.71803667" >
+        <name>45</name>
+      </trkpt>
+      <trkpt lat="56.38656729" lon="43.71909078" >
+        <name>65</name>
+      </trkpt>
+      <trkpt lat="56.38373503" lon="43.73032115" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.38232135" lon="43.73491806" >
+        <name>53</name>
+      </trkpt>
+      <trkpt lat="56.38536269" lon="43.73699836" >
+        <name>75</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ж-14 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38102732" lon="43.73669536" >
+        <name>40</name>
+      </trkpt>
+      <trkpt lat="56.37965047" lon="43.73693321" >
+        <name>31</name>
+      </trkpt>
+      <trkpt lat="56.37952298" lon="43.73300522" >
+        <name>59</name>
+      </trkpt>
+      <trkpt lat="56.38113126" lon="43.73094386" >
+        <name>72</name>
+      </trkpt>
+      <trkpt lat="56.38085995" lon="43.72696430" >
+        <name>74</name>
+      </trkpt>
+      <trkpt lat="56.38292481" lon="43.72057809" >
+        <name>78</name>
+      </trkpt>
+      <trkpt lat="56.38480394" lon="43.71803667" >
+        <name>45</name>
+      </trkpt>
+      <trkpt lat="56.38656729" lon="43.71909078" >
+        <name>65</name>
+      </trkpt>
+      <trkpt lat="56.38467356" lon="43.72354175" >
+        <name>71</name>
+      </trkpt>
+      <trkpt lat="56.38373503" lon="43.73032115" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.38554021" lon="43.73758252" >
+        <name>76</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ж-12 </name>
+    <trkseg>
+      <trkpt lat="56.38418873" lon="43.73810482" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38345153" lon="43.73787657" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.38340971" lon="43.73785731" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.38152871" lon="43.73721927" >
+        <name>36</name>
+      </trkpt>
+      <trkpt lat="56.38067175" lon="43.73498411" >
+        <name>61</name>
+      </trkpt>
+      <trkpt lat="56.38113126" lon="43.73094386" >
+        <name>72</name>
+      </trkpt>
+      <trkpt lat="56.38373503" lon="43.73032115" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.38554021" lon="43.73758252" >
+        <name>76</name>
+      </trkpt>
+      <trkpt lat="56.38620870" lon="43.73629974" >
+        <name>90</name>
+      </trkpt>
+      <trkpt lat="56.38621648" lon="43.73643679" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38613969" lon="43.73608968" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585993" lon="43.73596973" >
+        <name>M2</name>
+      </trkpt>
+      <trkpt lat="56.38585715" lon="43.73596205" >
+        <name>Ф1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
