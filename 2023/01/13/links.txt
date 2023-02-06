@@ -1,6 +1,6 @@
 трансляции
-ЖЭ https://viewer.o-gps-center.ru/viewer/event/??
-МЭ https://viewer.o-gps-center.ru/viewer/event/??
+ЖЭ https://viewer.o-gps-center.ru/viewer/event/14828
+МЭ https://viewer.o-gps-center.ru/viewer/event/14827
 
 карты
 ЖЭ https://o-gps-center.ru/manage/maps/view/??
