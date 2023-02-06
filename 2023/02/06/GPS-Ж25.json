@@ -1,0 +1,20 @@
+[
+  { "DeviceName": "30", "StartNumber": 151, "Class": "Ж-25", "BirthYear": "2001", "LastName": "Евтюхова",      "FirstName": "Ольга",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T11:05:00+03:00" },
+  { "DeviceName": "31", "StartNumber": 251, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Барышникова",   "FirstName": "Светлана",    "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T12:05:00+03:00" },
+  { "DeviceName": "32", "StartNumber": 351, "Class": "Ж-25", "BirthYear": "1999", "LastName": "Русакова",      "FirstName": "Александра",  "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T13:05:00+03:00" },
+  { "DeviceName": "33", "StartNumber": 152, "Class": "Ж-25", "BirthYear": "1998", "LastName": "Степанова",     "FirstName": "Екатерина",   "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T11:05:00+03:00" },
+  { "DeviceName": "34", "StartNumber": 252, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Еремина",       "FirstName": "Анастасия",   "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T12:05:00+03:00" },
+  { "DeviceName": "35", "StartNumber": 352, "Class": "Ж-25", "BirthYear": "1998", "LastName": "Гулевских",     "FirstName": "Александра",  "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T13:05:00+03:00" },
+  { "DeviceName": "36", "StartNumber": 153, "Class": "Ж-25", "BirthYear": "2002", "LastName": "Нестерова",     "FirstName": "Ирина",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T11:05:00+03:00" },
+  { "DeviceName": "37", "StartNumber": 253, "Class": "Ж-25", "BirthYear": "2000", "LastName": "Точилкина",     "FirstName": "Мария",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T12:05:00+03:00" },
+  { "DeviceName": "38", "StartNumber": 353, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Рыбакова",      "FirstName": "Ульяна",      "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T13:05:00+03:00" },
+  { "DeviceName": "39", "StartNumber": 154, "Class": "Ж-25", "BirthYear": "2000", "LastName": "Кузьмина",      "FirstName": "Анна",        "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T11:05:00+03:00" },
+  { "DeviceName": "40", "StartNumber": 254, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Гладилкина",    "FirstName": "Олеся",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T12:05:00+03:00" },
+  { "DeviceName": "41", "StartNumber": 354, "Class": "Ж-25", "BirthYear": "2001", "LastName": "Чумоватова",    "FirstName": "Анна",        "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T13:05:00+03:00" },
+  { "DeviceName": "42", "StartNumber": 155, "Class": "Ж-25", "BirthYear": "2000", "LastName": "Цыганенко",     "FirstName": "София",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T11:05:00+03:00" },
+  { "DeviceName": "43", "StartNumber": 255, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Кривец",        "FirstName": "Софья",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T12:05:00+03:00" },
+  { "DeviceName": "44", "StartNumber": 355, "Class": "Ж-25", "BirthYear": "1999", "LastName": "Лаптева",       "FirstName": "Ирина",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T13:05:00+03:00" },
+  { "DeviceName": "45", "StartNumber": 156, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Мурдасова",     "FirstName": "Анастасия",   "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T11:05:00+03:00" },
+  { "DeviceName": "46", "StartNumber": 256, "Class": "Ж-25", "BirthYear": "2004", "LastName": "Нурмухаметова", "FirstName": "Василина",    "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T12:05:00+03:00" },
+  { "DeviceName": "47", "StartNumber": 356, "Class": "Ж-25", "BirthYear": "2001", "LastName": "Брялина",       "FirstName": "Мария",       "StartTime": "2023-02-06T10:03:00+03:00", "FinishTime": "2023-02-06T13:05:00+03:00" }
+]
