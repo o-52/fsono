@@ -1,0 +1,12 @@
+[
+  { "DeviceName": "57", "StartNumber": 201, "Class": "Юноши", "BirthYear": "2006", "LastName": "Феночка",     "FirstName": "Родион",    "StartTime": "2023-02-17T10:01:00+03:00", "FinishTime": "2023-02-17T12:01:00+03:00" },
+  { "DeviceName": "58", "StartNumber": 202, "Class": "Юноши", "BirthYear": "2007", "LastName": "Соколовский", "FirstName": "Евгений",   "StartTime": "2023-02-17T10:02:00+03:00", "FinishTime": "2023-02-17T12:02:00+03:00" },
+  { "DeviceName": "59", "StartNumber": 203, "Class": "Юноши", "BirthYear": "2006", "LastName": "Калинин",     "FirstName": "Василий",   "StartTime": "2023-02-17T10:03:00+03:00", "FinishTime": "2023-02-17T12:03:00+03:00" },
+  { "DeviceName": "60", "StartNumber": 204, "Class": "Юноши", "BirthYear": "2005", "LastName": "Муравьев",    "FirstName": "Ярослав",   "StartTime": "2023-02-17T10:04:00+03:00", "FinishTime": "2023-02-17T12:04:00+03:00" },
+  { "DeviceName": "61", "StartNumber": 205, "Class": "Юноши", "BirthYear": "2009", "LastName": "Кащенков",    "FirstName": "Юрий",      "StartTime": "2023-02-17T10:05:00+03:00", "FinishTime": "2023-02-17T12:05:00+03:00" },
+  { "DeviceName": "62", "StartNumber": 206, "Class": "Юноши", "BirthYear": "2005", "LastName": "Пантелеев",   "FirstName": "Егор",      "StartTime": "2023-02-17T10:06:00+03:00", "FinishTime": "2023-02-17T12:06:00+03:00" },
+  { "DeviceName": "63", "StartNumber": 207, "Class": "Юноши", "BirthYear": "2006", "LastName": "Омелюх",      "FirstName": "Вадим",     "StartTime": "2023-02-17T10:07:00+03:00", "FinishTime": "2023-02-17T12:07:00+03:00" },
+  { "DeviceName": "64", "StartNumber": 208, "Class": "Юноши", "BirthYear": "2005", "LastName": "Ленский",     "FirstName": "Александр", "StartTime": "2023-02-17T10:08:00+03:00", "FinishTime": "2023-02-17T12:08:00+03:00" },
+  { "DeviceName": "65", "StartNumber": 209, "Class": "Юноши", "BirthYear": "2005", "LastName": "Олифир",      "FirstName": "Александр", "StartTime": "2023-02-17T10:09:00+03:00", "FinishTime": "2023-02-17T12:09:00+03:00" },
+  { "DeviceName": "67", "StartNumber": 210, "Class": "Юноши", "BirthYear": "2007", "LastName": "Квасов",      "FirstName": "Даниил",    "StartTime": "2023-02-17T10:10:00+03:00", "FinishTime": "2023-02-17T12:10:00+03:00" }
+]
