@@ -1,0 +1,8 @@
+[
+  { "DeviceName": "38", "StartNumber": 114, "Class": "ЖЕНЩИНЫ", "BirthYear": "1990", "LastName": "Найдионова",  "FirstName": "Антонина", "StartTime": "2023-02-17T10:14:00+03:00", "FinishTime": "2023-02-17T12:14:00+03:00" },
+  { "DeviceName": "39", "StartNumber": 115, "Class": "ЖЕНЩИНЫ", "BirthYear": "2001", "LastName": "Гаврилова",   "FirstName": "Дарья",    "StartTime": "2023-02-17T10:15:00+03:00", "FinishTime": "2023-02-17T12:15:00+03:00" },
+  { "DeviceName": "40", "StartNumber": 116, "Class": "ЖЕНЩИНЫ", "BirthYear": "2002", "LastName": "Замогильная", "FirstName": "Валерия",  "StartTime": "2023-02-17T10:16:00+03:00", "FinishTime": "2023-02-17T12:16:00+03:00" },
+  { "DeviceName": "41", "StartNumber": 117, "Class": "ЖЕНЩИНЫ", "BirthYear": "2000", "LastName": "Бурмистрова", "FirstName": "Софья",    "StartTime": "2023-02-17T10:17:00+03:00", "FinishTime": "2023-02-17T12:17:00+03:00" },
+  { "DeviceName": "42", "StartNumber": 118, "Class": "ЖЕНЩИНЫ", "BirthYear": "1985", "LastName": "Лапикус",     "FirstName": "Ирина",    "StartTime": "2023-02-17T10:18:00+03:00", "FinishTime": "2023-02-17T12:18:00+03:00" },
+  { "DeviceName": "43", "StartNumber": 119, "Class": "ЖЕНЩИНЫ", "BirthYear": "1994", "LastName": "Говорова",    "FirstName": "Марина",   "StartTime": "2023-02-17T10:19:00+03:00", "FinishTime": "2023-02-17T12:19:00+03:00" }
+]

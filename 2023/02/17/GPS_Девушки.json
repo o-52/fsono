@@ -1,0 +1,10 @@
+[
+  { "DeviceName": "30", "StartNumber": 311, "Class": "Девушки", "BirthYear": "2008", "LastName": "Слугина",   "FirstName": "Злата",    "StartTime": "2023-02-17T10:11:00+03:00", "FinishTime": "2023-02-17T12:11:00+03:00" },
+  { "DeviceName": "31", "StartNumber": 312, "Class": "Девушки", "BirthYear": "2008", "LastName": "Каширина",  "FirstName": "Дарина",   "StartTime": "2023-02-17T10:12:00+03:00", "FinishTime": "2023-02-17T12:12:00+03:00" },
+  { "DeviceName": "68", "StartNumber": 313, "Class": "Девушки", "BirthYear": "2007", "LastName": "Марисова",  "FirstName": "Карина",   "StartTime": "2023-02-17T10:13:00+03:00", "FinishTime": "2023-02-17T12:13:00+03:00" },
+  { "DeviceName": "33", "StartNumber": 314, "Class": "Девушки", "BirthYear": "2008", "LastName": "Осипова",   "FirstName": "Василиса", "StartTime": "2023-02-17T10:14:00+03:00", "FinishTime": "2023-02-17T12:14:00+03:00" },
+  { "DeviceName": "34", "StartNumber": 315, "Class": "Девушки", "BirthYear": "2005", "LastName": "Юдина",     "FirstName": "Мария",    "StartTime": "2023-02-17T10:15:00+03:00", "FinishTime": "2023-02-17T12:15:00+03:00" },
+  { "DeviceName": "35", "StartNumber": 316, "Class": "Девушки", "BirthYear": "2007", "LastName": "Клименко",  "FirstName": "Софья",    "StartTime": "2023-02-17T10:16:00+03:00", "FinishTime": "2023-02-17T12:16:00+03:00" },
+  { "DeviceName": "36", "StartNumber": 317, "Class": "Девушки", "BirthYear": "2007", "LastName": "Садикова",  "FirstName": "Алина",    "StartTime": "2023-02-17T10:17:00+03:00", "FinishTime": "2023-02-17T12:17:00+03:00" },
+  { "DeviceName": "37", "StartNumber": 318, "Class": "Девушки", "BirthYear": "2008", "LastName": "Грачёва",   "FirstName": "Дарья",    "StartTime": "2023-02-17T10:18:00+03:00", "FinishTime": "2023-02-17T12:18:00+03:00" }
+]
