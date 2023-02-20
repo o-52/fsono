@@ -1,0 +1,12 @@
+[
+  { "DeviceName": "30", "StartNumber": 301, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Лотоцкая",     "FirstName": "София",     "BirthYear": "2005" },
+  { "DeviceName": "31", "StartNumber": 302, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Игнатова",     "FirstName": "Алина",     "BirthYear": "2003" },
+  { "DeviceName": "32", "StartNumber": 303, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Лиштаева",     "FirstName": "Анна",      "BirthYear": "2003" },
+  { "DeviceName": "33", "StartNumber": 304, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Климочкина",   "FirstName": "Софья",     "BirthYear": "2005" },
+  { "DeviceName": "34", "StartNumber": 305, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Волкова",      "FirstName": "Анастасия", "BirthYear": "2005" },
+  { "DeviceName": "35", "StartNumber": 306, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Хренникова",   "FirstName": "Юлия",      "BirthYear": "2004" },
+  { "DeviceName": "36", "StartNumber": 307, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Мусатова",     "FirstName": "Диана",     "BirthYear": "2003" },
+  { "DeviceName": "37", "StartNumber": 308, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Вахитова",     "FirstName": "Анна",      "BirthYear": "2004" },
+  { "DeviceName": "38", "StartNumber": 326, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Тремпольцева", "FirstName": "Анна",      "BirthYear": "2003" },
+  { "DeviceName": "39", "StartNumber": 328, "StartTime": "2023-02-21T10:45:00+03:00", "FinishTime": "2023-02-21T12:45:00+03:00", "Class": "Ж20", "LastName": "Виктория",     "FirstName": "Анна",      "BirthYear": "2003" }
+]
