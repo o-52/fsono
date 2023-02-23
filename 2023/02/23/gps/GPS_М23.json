@@ -1,0 +1,12 @@
+[
+  { "DeviceName": "51", "StartNumber": 311, "StartTime": "2023-02-23T10:41:00+04:00", "FinishTime": "2023-02-23T12:41:00+04:00", "Class": "М23", "LastName": "Таран",    "FirstName": "Николай", "BirthYear": "2000" },
+  { "DeviceName": "52", "StartNumber": 312, "StartTime": "2023-02-23T10:42:00+04:00", "FinishTime": "2023-02-23T12:42:00+04:00", "Class": "М23", "LastName": "Дорма",    "FirstName": "Артемий", "BirthYear": "2001" },
+  { "DeviceName": "53", "StartNumber": 313, "StartTime": "2023-02-23T10:43:00+04:00", "FinishTime": "2023-02-23T12:43:00+04:00", "Class": "М23", "LastName": "Сазыкин",  "FirstName": "Герман",  "BirthYear": "2000" },
+  { "DeviceName": "54", "StartNumber": 314, "StartTime": "2023-02-23T10:44:00+04:00", "FinishTime": "2023-02-23T12:44:00+04:00", "Class": "М23", "LastName": "Черных",   "FirstName": "Михаил",  "BirthYear": "2002" },
+  { "DeviceName": "55", "StartNumber": 315, "StartTime": "2023-02-23T10:45:00+04:00", "FinishTime": "2023-02-23T12:45:00+04:00", "Class": "М23", "LastName": "Митяков",  "FirstName": "Сергей",  "BirthYear": "2000" },
+  { "DeviceName": "56", "StartNumber": 316, "StartTime": "2023-02-23T10:46:00+04:00", "FinishTime": "2023-02-23T12:46:00+04:00", "Class": "М23", "LastName": "Савков",   "FirstName": "Антон",   "BirthYear": "2002" },
+  { "DeviceName": "57", "StartNumber": 317, "StartTime": "2023-02-23T10:47:00+04:00", "FinishTime": "2023-02-23T12:47:00+04:00", "Class": "М23", "LastName": "Жилин",    "FirstName": "Максим",  "BirthYear": "2001" },
+  { "DeviceName": "58", "StartNumber": 318, "StartTime": "2023-02-23T10:48:00+04:00", "FinishTime": "2023-02-23T12:48:00+04:00", "Class": "М23", "LastName": "Голубев",  "FirstName": "Михаил",  "BirthYear": "2001" },
+  { "DeviceName": "59", "StartNumber": 319, "StartTime": "2023-02-23T10:49:00+04:00", "FinishTime": "2023-02-23T12:49:00+04:00", "Class": "М23", "LastName": "Таскаев",  "FirstName": "Максим",  "BirthYear": "2000" },
+  { "DeviceName": "60", "StartNumber": 320, "StartTime": "2023-02-23T10:50:00+04:00", "FinishTime": "2023-02-23T12:50:00+04:00", "Class": "М23", "LastName": "Тимофеев", "FirstName": "Никита",  "BirthYear": "2000" }
+]
