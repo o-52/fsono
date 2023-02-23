@@ -1,0 +1,6 @@
+[
+  { "DeviceName": "40", "StartNumber": 105, "StartTime": "2023-02-22T11:05:00+04:00", "FinishTime": "2023-02-22T13:05:00+04:00", "Class": "Ж23", "LastName": "Воробьева",  "FirstName": "Мария",   "BirthYear": "2002" },
+  { "DeviceName": "41", "StartNumber": 110, "StartTime": "2023-02-22T11:10:00+04:00", "FinishTime": "2023-02-22T13:10:00+04:00", "Class": "Ж23", "LastName": "Холманских", "FirstName": "Надежда", "BirthYear": "2001" },
+  { "DeviceName": "42", "StartNumber": 112, "StartTime": "2023-02-22T11:12:00+04:00", "FinishTime": "2023-02-22T13:12:00+04:00", "Class": "Ж23", "LastName": "Кузнецова",  "FirstName": "Софья",   "BirthYear": "2001" },
+  { "DeviceName": "43", "StartNumber": 117, "StartTime": "2023-02-22T11:17:00+04:00", "FinishTime": "2023-02-22T13:17:00+04:00", "Class": "Ж23", "LastName": "Сокольская", "FirstName": "Ульяна",  "BirthYear": "2000" }
+]
