@@ -1,12 +1,13 @@
 [
-  { "DeviceName": "30", "StartNumber": 108, "StartTime": "2023-02-23T10:38:00+04:00", "FinishTime": "2023-02-23T12:38:00+04:00", "Class": "Ж20", "LastName": "Тремпольцева", "FirstName": "Анна",      "BirthYear": "2003" },
-  { "DeviceName": "31", "StartNumber": 113, "StartTime": "2023-02-23T10:43:00+04:00", "FinishTime": "2023-02-23T12:43:00+04:00", "Class": "Ж20", "LastName": "Крутова",      "FirstName": "Виктория",  "BirthYear": "2003" },
-  { "DeviceName": "32", "StartNumber": 125, "StartTime": "2023-02-23T10:55:00+04:00", "FinishTime": "2023-02-23T12:55:00+04:00", "Class": "Ж20", "LastName": "Лиштаева",     "FirstName": "Анна",      "BirthYear": "2003" },
-  { "DeviceName": "33", "StartNumber": 126, "StartTime": "2023-02-23T10:56:00+04:00", "FinishTime": "2023-02-23T12:56:00+04:00", "Class": "Ж20", "LastName": "Хренникова",   "FirstName": "Юлия",      "BirthYear": "2004" },
-  { "DeviceName": "34", "StartNumber": 127, "StartTime": "2023-02-23T10:57:00+04:00", "FinishTime": "2023-02-23T12:57:00+04:00", "Class": "Ж20", "LastName": "Вахитова",     "FirstName": "Анна",      "BirthYear": "2004" },
-  { "DeviceName": "35", "StartNumber": 129, "StartTime": "2023-02-23T10:59:00+04:00", "FinishTime": "2023-02-23T12:59:00+04:00", "Class": "Ж20", "LastName": "Лотоцкая",     "FirstName": "София",     "BirthYear": "2005" },
-  { "DeviceName": "36", "StartNumber": 130, "StartTime": "2023-02-23T11:00:00+04:00", "FinishTime": "2023-02-23T13:01:00+04:00", "Class": "Ж20", "LastName": "Климочкина",   "FirstName": "Софья",     "BirthYear": "2005" },
-  { "DeviceName": "37", "StartNumber": 131, "StartTime": "2023-02-23T11:01:00+04:00", "FinishTime": "2023-02-23T13:02:00+04:00", "Class": "Ж20", "LastName": "Игнатова",     "FirstName": "Алина",     "BirthYear": "2003" },
-  { "DeviceName": "38", "StartNumber": 132, "StartTime": "2023-02-23T11:02:00+04:00", "FinishTime": "2023-02-23T13:03:00+04:00", "Class": "Ж20", "LastName": "Мусатова",     "FirstName": "Диана",     "BirthYear": "2003" },
-  { "DeviceName": "39", "StartNumber": 133, "StartTime": "2023-02-23T11:03:00+04:00", "FinishTime": "2023-02-23T13:04:00+04:00", "Class": "Ж20", "LastName": "Волкова",      "FirstName": "Анастасия", "BirthYear": "2005" }
+  { "DeviceName": "51", "StartNumber": 301.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Бараева",    "FirstName": "Елизавета", "BirthYear": "2004" },
+  { "DeviceName": "52", "StartNumber": 301.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Волкова",    "FirstName": "Анастасия", "BirthYear": "2005" },
+  { "DeviceName": "53", "StartNumber": 301.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Хренникова", "FirstName": "Юлия",      "BirthYear": "2004" },
+  
+  { "DeviceName": "54", "StartNumber": 303.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Купрацевич", "FirstName": "Лариса",    "BirthYear": "2005" },
+  { "DeviceName": "55", "StartNumber": 303.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Евтюхова",   "FirstName": "Екатерина", "BirthYear": "2003" },
+  { "DeviceName": "56", "StartNumber": 303.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Клюкина",    "FirstName": "Екатерина", "BirthYear": "2005" },
+  
+  { "DeviceName": "57", "StartNumber": 307.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Вахитова",   "FirstName": "Анна",      "BirthYear": "2004" },
+  { "DeviceName": "58", "StartNumber": 307.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Климочкина", "FirstName": "Софья",     "BirthYear": "2005" },
+  { "DeviceName": "59", "StartNumber": 307.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Покудина",   "FirstName": "Вероника",  "BirthYear": "2005" }
 ]

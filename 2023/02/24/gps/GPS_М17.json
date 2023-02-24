@@ -1,11 +1,13 @@
 [
-  { "DeviceName": "61", "StartNumber": 577, "StartTime": "2023-02-23T11:47:00+04:00", "FinishTime": "2023-02-23T13:47:00+04:00", "Class": "М17", "LastName": "Никифоров",   "FirstName": "Федор",    "BirthYear": "2006" },
-  { "DeviceName": "62", "StartNumber": 599, "StartTime": "2023-02-23T12:09:00+04:00", "FinishTime": "2023-02-23T14:09:00+04:00", "Class": "М17", "LastName": "Калинин",     "FirstName": "Матвей",   "BirthYear": "2006" },
-  { "DeviceName": "63", "StartNumber": 600, "StartTime": "2023-02-23T12:10:00+04:00", "FinishTime": "2023-02-23T14:10:00+04:00", "Class": "М17", "LastName": "Сибиряков",   "FirstName": "Олег",     "BirthYear": "2007" },
-  { "DeviceName": "64", "StartNumber": 601, "StartTime": "2023-02-23T12:11:00+04:00", "FinishTime": "2023-02-23T14:11:00+04:00", "Class": "М17", "LastName": "Некрасов",    "FirstName": "Егор",     "BirthYear": "2006" },
-  { "DeviceName": "65", "StartNumber": 603, "StartTime": "2023-02-23T12:13:00+04:00", "FinishTime": "2023-02-23T14:13:00+04:00", "Class": "М17", "LastName": "Антоновский", "FirstName": "Андрей",   "BirthYear": "2006" },
-  { "DeviceName": "67", "StartNumber": 604, "StartTime": "2023-02-23T12:14:00+04:00", "FinishTime": "2023-02-23T14:14:00+04:00", "Class": "М17", "LastName": "Спиридонов",  "FirstName": "Анатолий", "BirthYear": "2006" },
-  { "DeviceName": "68", "StartNumber": 605, "StartTime": "2023-02-23T12:15:00+04:00", "FinishTime": "2023-02-23T14:15:00+04:00", "Class": "М17", "LastName": "Плехов",      "FirstName": "Артур",    "BirthYear": "2006" },
-  { "DeviceName": "69", "StartNumber": 607, "StartTime": "2023-02-23T11:17:00+04:00", "FinishTime": "2023-02-23T13:17:00+04:00", "Class": "М17", "LastName": "Лебедев",     "FirstName": "Илья",     "BirthYear": "2006" },
-  { "DeviceName": "70", "StartNumber": 608, "StartTime": "2023-02-23T12:18:00+04:00", "FinishTime": "2023-02-23T14:18:00+04:00", "Class": "М17", "LastName": "Курнов",      "FirstName": "Данил",    "BirthYear": "2007" }
+  { "DeviceName": "60", "StartNumber": 401.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Сибиряков",  "FirstName": "Олег",     "BirthYear": "2007" },
+  { "DeviceName": "61", "StartNumber": 401.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Сидоров",    "FirstName": "Прохор",   "BirthYear": "2007" },
+  { "DeviceName": "62", "StartNumber": 401.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Курнов",     "FirstName": "Данил",    "BirthYear": "2007" },
+  
+  { "DeviceName": "63", "StartNumber": 403.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Мухаметшин", "FirstName": "Тимур",    "BirthYear": "2007" },
+  { "DeviceName": "64", "StartNumber": 403.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Некрасов",   "FirstName": "Егор",     "BirthYear": "2006" },
+  { "DeviceName": "65", "StartNumber": 403.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Спиридонов", "FirstName": "Анатолий", "BirthYear": "2006" },
+  
+  { "DeviceName": "67", "StartNumber": 405.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Медведев",   "FirstName": "Тимофей",  "BirthYear": "2007" },
+  { "DeviceName": "68", "StartNumber": 405.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Лебедев",    "FirstName": "Илья",     "BirthYear": "2006" },
+  { "DeviceName": "69", "StartNumber": 405.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "М17", "LastName": "Плехов",     "FirstName": "Артур",    "BirthYear": "2006" }
 ]
