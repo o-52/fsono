@@ -1,0 +1,13 @@
+[
+  { "DeviceName": "70", "StartNumber": 301.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Бараева",    "FirstName": "Елизавета", "BirthYear": "2004" },
+  { "DeviceName": "52", "StartNumber": 301.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Волкова",    "FirstName": "Анастасия", "BirthYear": "2005" },
+  { "DeviceName": "53", "StartNumber": 301.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Хренникова", "FirstName": "Юлия",      "BirthYear": "2004" },
+  
+  { "DeviceName": "54", "StartNumber": 303.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Купрацевич", "FirstName": "Лариса",    "BirthYear": "2005" },
+  { "DeviceName": "55", "StartNumber": 303.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Евтюхова",   "FirstName": "Екатерина", "BirthYear": "2003" },
+  { "DeviceName": "56", "StartNumber": 303.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Клюкина",    "FirstName": "Екатерина", "BirthYear": "2005" },
+  
+  { "DeviceName": "57", "StartNumber": 307.1, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Вахитова",   "FirstName": "Анна",      "BirthYear": "2004" },
+  { "DeviceName": "58", "StartNumber": 307.2, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Климочкина", "FirstName": "Софья",     "BirthYear": "2005" },
+  { "DeviceName": "59", "StartNumber": 307.3, "StartTime": "2023-02-24T10:00:00+04:00", "FinishTime": "2023-02-24T13:00:00+04:00", "Class": "Ж20", "LastName": "Покудина",   "FirstName": "Вероника",  "BirthYear": "2005" }
+]
