@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+creator="OCAD Version 12.1.8" version="1.1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
+http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <link href="http://www.ocad.com">
+      <text>OCAD AG</text>
+    </link>
+    <time>2023-03-01T9:35:51</time>
+    <bounds maxlat="56.01790026" maxlon="92.72351752" minlat="56.00840316" minlon="92.69537686"/>
+  </metadata>
+
+  <wpt lat="56.00822045" lon="92.72002628" >
+    <name>С1</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00832492" lon="92.71556204" >
+    <name>31</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01060117" lon="92.71267692" >
+    <name>32</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00903946" lon="92.71267532" >
+    <name>33</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01156102" lon="92.71480298" >
+    <name>34</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00956538" lon="92.71334531" >
+    <name>35</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01107620" lon="92.71706576" >
+    <name>36</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01185599" lon="92.71944121" >
+    <name>37</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01505205" lon="92.72198329" >
+    <name>38</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01670969" lon="92.71285746" >
+    <name>39</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01616283" lon="92.70439744" >
+    <name>40</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01696999" lon="92.71964990" >
+    <name>41</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01500508" lon="92.71095840" >
+    <name>42</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01695107" lon="92.69679331" >
+    <name>43</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01511637" lon="92.71794739" >
+    <name>44</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01820442" lon="92.71574681" >
+    <name>45</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01733040" lon="92.70131864" >
+    <name>46</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01316722" lon="92.69913235" >
+    <name>47</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00878768" lon="92.69542458" >
+    <name>48</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00754847" lon="92.69662436" >
+    <name>49</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00722993" lon="92.70437668" >
+    <name>50</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01165506" lon="92.70044776" >
+    <name>51</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00879454" lon="92.69855387" >
+    <name>52</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00660632" lon="92.70323174" >
+    <name>53</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01083473" lon="92.70249856" >
+    <name>54</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00905781" lon="92.69965564" >
+    <name>55</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00709099" lon="92.70119733" >
+    <name>56</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00798064" lon="92.70496517" >
+    <name>57</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00898050" lon="92.70964397" >
+    <name>58</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00749018" lon="92.70703101" >
+    <name>59</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00676454" lon="92.70914470" >
+    <name>60</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00708345" lon="92.71653745" >
+    <name>61</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00676944" lon="92.71958967" >
+    <name>62</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01111878" lon="92.71072528" >
+    <name>63</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00625537" lon="92.71498101" >
+    <name>64</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00725800" lon="92.71387132" >
+    <name>65</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00969961" lon="92.71624623" >
+    <name>67</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00992702" lon="92.71128268" >
+    <name>69</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01352216" lon="92.71394119" >
+    <name>70</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01310224" lon="92.70539313" >
+    <name>71</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.01252178" lon="92.70948673" >
+    <name>72</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00727750" lon="92.71037725" >
+    <name>73</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00685753" lon="92.71254984" >
+    <name>74</name>
+    <cmt></cmt>
+  </wpt>
+  <wpt lat="56.00735528" lon="92.72220115" >
+    <name>100</name>
+    <cmt></cmt>
+  </wpt>
+  <trk>
+    <name> Мужчины 4 круг обший </name>
+    <trkseg>
+      <trkpt lat="56.00734996" lon="92.72380810" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00740755" lon="92.72362559" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00738585" lon="92.72369683" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00745242" lon="92.72353795" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00751420" lon="92.72338651" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00749508" lon="92.72341466" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00754987" lon="92.72325753" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00763884" lon="92.72300981" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00773123" lon="92.72295060" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00776956" lon="92.72270781" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00780929" lon="92.72245234" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00782698" lon="92.72232272" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00786755" lon="92.72206896" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00789530" lon="92.72188915" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00790079" lon="92.72179498" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00793727" lon="92.72162270" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00796971" lon="92.72146116" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00800492" lon="92.72139000" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00801784" lon="92.72122120" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00803213" lon="92.72101720" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00802910" lon="92.72091072" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00805844" lon="92.72071343" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00808072" lon="92.72055866" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00809269" lon="92.72048299" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00811400" lon="92.72032971" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00822045" lon="92.72002628" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.00969961" lon="92.71624623" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.00992702" lon="92.71128268" >
+        <name>69</name>
+      </trkpt>
+      <trkpt lat="56.00685753" lon="92.71254984" >
+        <name>74</name>
+      </trkpt>
+      <trkpt lat="56.00676944" lon="92.71958967" >
+        <name>62</name>
+      </trkpt>
+      <trkpt lat="56.00735528" lon="92.72220115" >
+        <name>100</name>
+      </trkpt>
+      <trkpt lat="56.00730119" lon="92.72266222" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725683" lon="92.72289782" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725136" lon="92.72301449" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00722076" lon="92.72324377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00718532" lon="92.72350461" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00716142" lon="92.72363184" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713392" lon="92.72389687" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00710578" lon="92.72415540" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00707567" lon="92.72428025" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706532" lon="92.72454421" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706294" lon="92.72460500" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00704626" lon="92.72463989" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00705936" lon="92.72469619" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706707" lon="92.72472930" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706959" lon="92.72475694" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00708875" lon="92.72477380" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713231" lon="92.72481140" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00715257" lon="92.72484608" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00720142" lon="92.72486343" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00726187" lon="92.72488384" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00729190" lon="92.72489884" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00735325" lon="92.72491936" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00740838" lon="92.72493750" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00743566" lon="92.72495377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00749194" lon="92.72496562" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00754291" lon="92.72497520" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00759157" lon="92.72506648" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00761980" lon="92.72498962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00764113" lon="92.72492798" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00766627" lon="92.72490701" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00767447" lon="92.72483569" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00770128" lon="92.72458825" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00771065" lon="92.72446402" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00774182" lon="92.72422034" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00778004" lon="92.72391162" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00779431" lon="92.72375425" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00783688" lon="92.72344929" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00785845" lon="92.72328962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00787503" lon="92.72321130" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00789212" lon="92.72305107" >
+        <name>M3</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Женщины 3 круг общий </name>
+    <trkseg>
+      <trkpt lat="56.00734996" lon="92.72380810" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00740755" lon="92.72362559" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00738585" lon="92.72369683" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00745242" lon="92.72353795" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00751420" lon="92.72338651" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00749508" lon="92.72341466" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00754987" lon="92.72325753" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00763884" lon="92.72300981" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00773123" lon="92.72295060" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00776956" lon="92.72270781" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00780929" lon="92.72245234" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00782698" lon="92.72232272" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00786755" lon="92.72206896" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00789530" lon="92.72188915" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00790079" lon="92.72179498" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00793727" lon="92.72162270" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00796971" lon="92.72146116" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00800492" lon="92.72139000" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00801784" lon="92.72122120" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00803213" lon="92.72101720" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00802910" lon="92.72091072" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00805844" lon="92.72071343" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00808072" lon="92.72055866" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00809269" lon="92.72048299" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00811400" lon="92.72032971" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00822045" lon="92.72002628" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.00969961" lon="92.71624623" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.00903946" lon="92.71267532" >
+        <name>33</name>
+      </trkpt>
+      <trkpt lat="56.00727750" lon="92.71037725" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.00676944" lon="92.71958967" >
+        <name>62</name>
+      </trkpt>
+      <trkpt lat="56.00735528" lon="92.72220115" >
+        <name>100</name>
+      </trkpt>
+      <trkpt lat="56.00730119" lon="92.72266222" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725683" lon="92.72289782" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725136" lon="92.72301449" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00722076" lon="92.72324377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00718532" lon="92.72350461" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00716142" lon="92.72363184" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713392" lon="92.72389687" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00710578" lon="92.72415540" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00707567" lon="92.72428025" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706532" lon="92.72454421" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706294" lon="92.72460500" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00704626" lon="92.72463989" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00705936" lon="92.72469619" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706707" lon="92.72472930" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706959" lon="92.72475694" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00708875" lon="92.72477380" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713231" lon="92.72481140" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00715257" lon="92.72484608" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00720142" lon="92.72486343" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00726187" lon="92.72488384" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00729190" lon="92.72489884" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00735325" lon="92.72491936" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00740838" lon="92.72493750" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00743566" lon="92.72495377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00749194" lon="92.72496562" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00754291" lon="92.72497520" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00759157" lon="92.72506648" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00761980" lon="92.72498962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00764113" lon="92.72492798" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00766627" lon="92.72490701" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00767447" lon="92.72483569" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00770128" lon="92.72458825" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00771065" lon="92.72446402" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00774182" lon="92.72422034" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00778004" lon="92.72391162" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00779431" lon="92.72375425" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00783688" lon="92.72344929" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00785845" lon="92.72328962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00787503" lon="92.72321130" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00789212" lon="92.72305107" >
+        <name>M3</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> М до 13 </name>
+    <trkseg>
+      <trkpt lat="56.00734996" lon="92.72380810" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00740755" lon="92.72362559" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00738585" lon="92.72369683" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00745242" lon="92.72353795" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00751420" lon="92.72338651" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00749508" lon="92.72341466" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00754987" lon="92.72325753" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00763884" lon="92.72300981" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00773123" lon="92.72295060" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00776956" lon="92.72270781" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00780929" lon="92.72245234" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00782698" lon="92.72232272" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00786755" lon="92.72206896" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00789530" lon="92.72188915" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00790079" lon="92.72179498" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00793727" lon="92.72162270" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00796971" lon="92.72146116" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00800492" lon="92.72139000" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00801784" lon="92.72122120" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00803213" lon="92.72101720" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00802910" lon="92.72091072" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00805844" lon="92.72071343" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00808072" lon="92.72055866" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00809269" lon="92.72048299" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00811400" lon="92.72032971" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00822045" lon="92.72002628" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.00832492" lon="92.71556204" >
+        <name>31</name>
+      </trkpt>
+      <trkpt lat="56.00969961" lon="92.71624623" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.00992702" lon="92.71128268" >
+        <name>69</name>
+      </trkpt>
+      <trkpt lat="56.00676454" lon="92.70914470" >
+        <name>60</name>
+      </trkpt>
+      <trkpt lat="56.00708345" lon="92.71653745" >
+        <name>61</name>
+      </trkpt>
+      <trkpt lat="56.00676944" lon="92.71958967" >
+        <name>62</name>
+      </trkpt>
+      <trkpt lat="56.00735528" lon="92.72220115" >
+        <name>100</name>
+      </trkpt>
+      <trkpt lat="56.00730119" lon="92.72266222" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725683" lon="92.72289782" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725136" lon="92.72301449" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00722076" lon="92.72324377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00718532" lon="92.72350461" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00716142" lon="92.72363184" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713392" lon="92.72389687" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00710578" lon="92.72415540" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00707567" lon="92.72428025" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706532" lon="92.72454421" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706294" lon="92.72460500" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00704626" lon="92.72463989" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00705936" lon="92.72469619" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706707" lon="92.72472930" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706959" lon="92.72475694" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00708875" lon="92.72477380" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713231" lon="92.72481140" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00715257" lon="92.72484608" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00720142" lon="92.72486343" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00726187" lon="92.72488384" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00729190" lon="92.72489884" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00735325" lon="92.72491936" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00740838" lon="92.72493750" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00743566" lon="92.72495377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00749194" lon="92.72496562" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00754291" lon="92.72497520" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00759157" lon="92.72506648" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00761980" lon="92.72498962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00764113" lon="92.72492798" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00766627" lon="92.72490701" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00767447" lon="92.72483569" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00770128" lon="92.72458825" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00771065" lon="92.72446402" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00774182" lon="92.72422034" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00778004" lon="92.72391162" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00779431" lon="92.72375425" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00783688" lon="92.72344929" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00785845" lon="92.72328962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00787503" lon="92.72321130" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00789212" lon="92.72305107" >
+        <name>M3</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name> Ж до 13 </name>
+    <trkseg>
+      <trkpt lat="56.00734996" lon="92.72380810" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00740755" lon="92.72362559" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00738585" lon="92.72369683" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00745242" lon="92.72353795" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00751420" lon="92.72338651" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00749508" lon="92.72341466" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00754987" lon="92.72325753" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00763884" lon="92.72300981" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00773123" lon="92.72295060" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00776956" lon="92.72270781" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00780929" lon="92.72245234" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00782698" lon="92.72232272" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00786755" lon="92.72206896" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00789530" lon="92.72188915" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00790079" lon="92.72179498" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00793727" lon="92.72162270" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00796971" lon="92.72146116" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00800492" lon="92.72139000" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00801784" lon="92.72122120" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00803213" lon="92.72101720" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00802910" lon="92.72091072" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00805844" lon="92.72071343" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00808072" lon="92.72055866" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00809269" lon="92.72048299" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00811400" lon="92.72032971" >
+        <name>M1</name>
+      </trkpt>
+      <trkpt lat="56.00822045" lon="92.72002628" >
+        <name>С1</name>
+      </trkpt>
+      <trkpt lat="56.00969961" lon="92.71624623" >
+        <name>67</name>
+      </trkpt>
+      <trkpt lat="56.00956538" lon="92.71334531" >
+        <name>35</name>
+      </trkpt>
+      <trkpt lat="56.00898050" lon="92.70964397" >
+        <name>58</name>
+      </trkpt>
+      <trkpt lat="56.00727750" lon="92.71037725" >
+        <name>73</name>
+      </trkpt>
+      <trkpt lat="56.00625537" lon="92.71498101" >
+        <name>64</name>
+      </trkpt>
+      <trkpt lat="56.00676944" lon="92.71958967" >
+        <name>62</name>
+      </trkpt>
+      <trkpt lat="56.00735528" lon="92.72220115" >
+        <name>100</name>
+      </trkpt>
+      <trkpt lat="56.00730119" lon="92.72266222" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725683" lon="92.72289782" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00725136" lon="92.72301449" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00722076" lon="92.72324377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00718532" lon="92.72350461" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00716142" lon="92.72363184" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713392" lon="92.72389687" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00710578" lon="92.72415540" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00707567" lon="92.72428025" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706532" lon="92.72454421" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706294" lon="92.72460500" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00704626" lon="92.72463989" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00705936" lon="92.72469619" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706707" lon="92.72472930" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00706959" lon="92.72475694" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00708875" lon="92.72477380" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00713231" lon="92.72481140" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00715257" lon="92.72484608" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00720142" lon="92.72486343" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00726187" lon="92.72488384" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00729190" lon="92.72489884" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00735325" lon="92.72491936" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00740838" lon="92.72493750" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00743566" lon="92.72495377" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00749194" lon="92.72496562" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00754291" lon="92.72497520" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00759157" lon="92.72506648" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00761980" lon="92.72498962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00764113" lon="92.72492798" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00766627" lon="92.72490701" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00767447" lon="92.72483569" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00770128" lon="92.72458825" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00771065" lon="92.72446402" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00774182" lon="92.72422034" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00778004" lon="92.72391162" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00779431" lon="92.72375425" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00783688" lon="92.72344929" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00785845" lon="92.72328962" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00787503" lon="92.72321130" >
+        <name>M3</name>
+      </trkpt>
+      <trkpt lat="56.00789212" lon="92.72305107" >
+        <name>M3</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
