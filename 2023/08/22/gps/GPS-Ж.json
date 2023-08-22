@@ -1,0 +1,19 @@
+[
+  { "DeviceName": "54", "StartNumber": 101, "Class": "Ж", "BirthYear": "1997", "LastName": "Холомянская",     "FirstName": "Мария",       "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "55", "StartNumber": 102, "Class": "Ж", "BirthYear": "1991", "LastName": "Войтова",         "FirstName": "Александра",  "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "56", "StartNumber": 103, "Class": "Ж", "BirthYear": "2004", "LastName": "Бесхмельнова",    "FirstName": "Ксения",      "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "57", "StartNumber": 104, "Class": "Ж", "BirthYear": "1999", "LastName": "Григорьева",      "FirstName": "Анастасия",   "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "58", "StartNumber": 105, "Class": "Ж", "BirthYear": "1979", "LastName": "Виноградова",     "FirstName": "Галина",      "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "59", "StartNumber": 106, "Class": "Ж", "BirthYear": "1997", "LastName": "Дворянская",      "FirstName": "Анна",        "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "60", "StartNumber": 107, "Class": "Ж", "BirthYear": "1988", "LastName": "Никитина",        "FirstName": "Екатерина",   "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "61", "StartNumber": 108, "Class": "Ж", "BirthYear": "2003", "LastName": "Дутова",          "FirstName": "Диана",       "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "62", "StartNumber": 109, "Class": "Ж", "BirthYear": "1990", "LastName": "Державина",       "FirstName": "Анна",        "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "63", "StartNumber": 110, "Class": "Ж", "BirthYear": "2001", "LastName": "Чумоватова",      "FirstName": "Анна",        "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "64", "StartNumber": 111, "Class": "Ж", "BirthYear": "2001", "LastName": "Сафронова",       "FirstName": "Анна",        "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "65", "StartNumber": 112, "Class": "Ж", "BirthYear": "1994", "LastName": "Фомичева",        "FirstName": "Татьяна",     "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "66", "StartNumber": 113, "Class": "Ж", "BirthYear": "1998", "LastName": "Калинина",        "FirstName": "Лилия",       "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "67", "StartNumber": 132, "Class": "Ж", "BirthYear": "1986", "LastName": "Миронова",        "FirstName": "Светлана",    "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "68", "StartNumber": 137, "Class": "Ж", "BirthYear": "1980", "LastName": "Новикова",        "FirstName": "Юлия",        "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "69", "StartNumber": 141, "Class": "Ж", "BirthYear": "1998", "LastName": "Пензина",         "FirstName": "Ксения",      "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" },
+  { "DeviceName": "70", "StartNumber": 145, "Class": "Ж", "BirthYear": "1990", "LastName": "Рудная",          "FirstName": "Анастасия",   "StartTime": "2023-08-22T09:30:00+03:00", "FinishTime": "2023-08-22T10:30:00+03:00" }
+]  
