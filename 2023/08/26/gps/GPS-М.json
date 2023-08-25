@@ -1,0 +1,23 @@
+[
+
+  { "DeviceName": "30", "StartNumber": 28, "Class": "М", "BirthYear": "1998", "LastName": "Кашин",      "FirstName": "Даниил",      "StartTime": "2023-08-25T09:28:00+03:00", "FinishTime": "2023-08-25T10:28:00+03:00" },
+  { "DeviceName": "31", "StartNumber": 29, "Class": "М", "BirthYear": "1995", "LastName": "Девятов",    "FirstName": "Владислав",   "StartTime": "2023-08-25T09:29:00+03:00", "FinishTime": "2023-08-25T10:29:00+03:00" },
+  { "DeviceName": "32", "StartNumber": 30, "Class": "М", "BirthYear": "2000", "LastName": "Кудрявцев",  "FirstName": "Николай",     "StartTime": "2023-08-25T09:30:00+03:00", "FinishTime": "2023-08-25T10:30:00+03:00" },
+  { "DeviceName": "33", "StartNumber": 32, "Class": "М", "BirthYear": "2004", "LastName": "Малыгин",    "FirstName": "Илья",        "StartTime": "2023-08-25T09:31:00+03:00", "FinishTime": "2023-08-25T10:31:00+03:00" },
+  { "DeviceName": "34", "StartNumber": 33, "Class": "М", "BirthYear": "1981", "LastName": "Храмов",     "FirstName": "Андрей",      "StartTime": "2023-08-25T09:33:00+03:00", "FinishTime": "2023-08-25T10:33:00+03:00" },
+  { "DeviceName": "35", "StartNumber": 34, "Class": "М", "BirthYear": "2001", "LastName": "Котов",      "FirstName": "Вячеслав",    "StartTime": "2023-08-25T09:34:00+03:00", "FinishTime": "2023-08-25T10:34:00+03:00" },
+  { "DeviceName": "36", "StartNumber": 36, "Class": "М", "BirthYear": "2003", "LastName": "Рослов",     "FirstName": "Дмитрий",     "StartTime": "2023-08-25T09:36:00+03:00", "FinishTime": "2023-08-25T10:36:00+03:00" },
+  { "DeviceName": "37", "StartNumber": 38, "Class": "М", "BirthYear": "1994", "LastName": "Поляков",    "FirstName": "Дмитрий",     "StartTime": "2023-08-25T09:38:00+03:00", "FinishTime": "2023-08-25T10:38:00+03:00" },
+  { "DeviceName": "38", "StartNumber": 39, "Class": "М", "BirthYear": "2003", "LastName": "Егоров",     "FirstName": "Павел",       "StartTime": "2023-08-25T09:39:00+03:00", "FinishTime": "2023-08-25T10:39:00+03:00" },
+  { "DeviceName": "39", "StartNumber": 40, "Class": "М", "BirthYear": "1997", "LastName": "Годлевский", "FirstName": "Евгений",     "StartTime": "2023-08-25T09:40:00+03:00", "FinishTime": "2023-08-25T10:40:00+03:00" },
+  { "DeviceName": "40", "StartNumber": 41, "Class": "М", "BirthYear": "2003", "LastName": "Тутынин",    "FirstName": "Марк",        "StartTime": "2023-08-25T09:41:00+03:00", "FinishTime": "2023-08-25T10:41:00+03:00" },
+  { "DeviceName": "41", "StartNumber": 46, "Class": "М", "BirthYear": "1997", "LastName": "Кулешов",    "FirstName": "Михаил",      "StartTime": "2023-08-25T09:46:00+03:00", "FinishTime": "2023-08-25T10:46:00+03:00" },
+  { "DeviceName": "42", "StartNumber": 47, "Class": "М", "BirthYear": "2002", "LastName": "Беляков",    "FirstName": "Михаил",      "StartTime": "2023-08-25T09:47:00+03:00", "FinishTime": "2023-08-25T10:47:00+03:00" },
+  { "DeviceName": "43", "StartNumber": 48, "Class": "М", "BirthYear": "2003", "LastName": "Логинов",    "FirstName": "Владислав",   "StartTime": "2023-08-25T09:48:00+03:00", "FinishTime": "2023-08-25T10:48:00+03:00" },
+  { "DeviceName": "44", "StartNumber": 49, "Class": "М", "BirthYear": "2001", "LastName": "Хохлов",     "FirstName": "Данила",      "StartTime": "2023-08-25T09:49:00+03:00", "FinishTime": "2023-08-25T10:49:00+03:00" },
+  { "DeviceName": "45", "StartNumber": 51, "Class": "М", "BirthYear": "1992", "LastName": "Попов",      "FirstName": "Игорь",       "StartTime": "2023-08-25T09:51:00+03:00", "FinishTime": "2023-08-25T10:51:00+03:00" },
+  { "DeviceName": "46", "StartNumber": 52, "Class": "М", "BirthYear": "1993", "LastName": "Козырев",    "FirstName": "Андрей",      "StartTime": "2023-08-25T09:52:00+03:00", "FinishTime": "2023-08-25T10:52:00+03:00" },
+  { "DeviceName": "47", "StartNumber": 53, "Class": "М", "BirthYear": "1992", "LastName": "Сухарев",    "FirstName": "Петр",        "StartTime": "2023-08-25T09:53:00+03:00", "FinishTime": "2023-08-25T10:53:00+03:00" },
+  { "DeviceName": "48", "StartNumber": 54, "Class": "М", "BirthYear": "1991", "LastName": "Масловский", "FirstName": "Дмитрий",     "StartTime": "2023-08-25T09:54:00+03:00", "FinishTime": "2023-08-25T10:54:00+03:00" },
+  { "DeviceName": "49", "StartNumber": 55, "Class": "М", "BirthYear": "2000", "LastName": "Тихонов",    "FirstName": "Дмитрий",     "StartTime": "2023-08-25T09:55:00+03:00", "FinishTime": "2023-08-25T10:55:00+03:00" }
+]
